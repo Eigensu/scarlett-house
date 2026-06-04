@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #f4efe4;
+  --color-cream-dark: #ede7d8;
+  --color-cream-darker: #e3dbc8;
+  --color-ink: #1a1612;
+  --color-ink-muted: #4a4238;
+  --color-ink-faint: #8a7e6e;
+  --color-brand-red: #a32020;
+  --color-brand-red-dark: #7a1818;
+  --color-brand-red-light: #c93030;
+
+  --font-serif: var(--font-serif);
+  --font-serif-alt: var(--font-serif-alt);
+  --font-sans: var(--font-sans);
+
+  --max-width-site: 1380px;
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+  --border-red: 1.5px solid var(--color-brand-red);
+  --border-red-thin: 1px solid var(--color-brand-red);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(26, 22, 18, 0.008) 3px,
+      rgba(26, 22, 18, 0.008) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+}
+
+@layer components {
+  .site-container {
+    width: min(var(--max-width-site), 100%);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .divider {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-top: var(--border-red);
+    margin: 0;
+  }
+
+  .divider-double {
+    border-top: var(--border-red);
+    box-shadow: 0 3px 0 0 var(--color-brand-red);
+  }
+
+  .divider-triple {
+    height: 7px;
+    border-top: var(--border-red);
+    border-bottom: var(--border-red);
+  }
+
+  .img-frame {
+    background: var(--color-cream-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 22s linear infinite;
+}
