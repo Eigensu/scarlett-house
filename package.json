@@ -6,19 +6,11 @@
     "build": "turbo build",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
-    "format": "prettier --write .",
-    "prepare": "husky"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "turbo": "latest",
-    "prettier": "latest",
-    "husky": "latest",
-    "lint-staged": "latest"
+    "prettier": "latest"
   },
-  "packageManager": "pnpm@9.0.0",
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
-      "prettier --write"
-    ]
-  }
+  "packageManager": "pnpm@9.0.0"
 }

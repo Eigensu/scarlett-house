@@ -40,9 +40,7 @@ export default function Section({
   return (
     <section
       ref={ref}
-      className={`py-20 border-t-[1.5px] border-brand-red ${flush ? 'pt-0' : ''} ${
-        lg ? 'py-28' : ''
-      } ${className}`}
+      className={`${lg ? 'py-28' : ''} ${flush ? 'pt-0' : ''} ${className}`}
       {...props}
     >
       {children}

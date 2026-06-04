@@ -1,44 +1,48 @@
 import Navbar from '@/components/Navbar';
-import Masthead from '@/components/Masthead';
-import HeroGrid from '@/components/HeroGrid';
-import Ticker from '@/components/Ticker';
+import HeroVideo from '@/components/HeroVideo';
 import Story from '@/components/Story';
-import FullBleed from '@/components/FullBleed';
-import ChefSection from '@/components/ChefSection';
 import GallerySection from '@/components/GallerySection';
-import BelliniSection from '@/components/BelliniSection';
+import ChefSection from '@/components/ChefSection';
+import CocktailsSection from '@/components/CocktailsSection';
 import CooksNoteSection from '@/components/CooksNoteSection';
-import ValentinesMenu from '@/components/ValentinesMenu';
-import MangoMenu from '@/components/MangoMenu';
-import BrunchMenu from '@/components/BrunchMenu';
+import ValentinesSection from '@/components/ValentinesSection';
+import MangoSection from '@/components/MangoSection';
+import MenuCTA from '@/components/MenuCTA';
 import ReservationSection from '@/components/ReservationSection';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream">
       <Navbar />
-      <Masthead />
 
-      <hr className="divider divider-triple mb-0" />
-
-      <HeroGrid />
-      <Ticker />
+      <HeroVideo />
 
       <Story />
+
       <GallerySection />
+
       <ChefSection />
-      <BelliniSection />
+
+      <CocktailsSection />
+
       <CooksNoteSection />
 
-      <FullBleed />
+      <ValentinesSection />
 
-      <ValentinesMenu />
-      <MangoMenu />
-      <BrunchMenu />
+      <MangoSection />
+
+      <MenuCTA
+        id="brunch"
+        label="Weekend Ritual"
+        title="Weekend Brunch"
+        sub="Sundays · 12:00 PM onwards · Bandra & Juhu"
+        body="A lively, interactive Sunday afternoon experience filled with good music, shared plates, and a warm social atmosphere."
+        cta="Reserve a Sunday Table →"
+        ctaHref="#reserve"
+        image="/IMG_3928.JPEG"
+      />
 
       <ReservationSection />
-      <Footer />
     </main>
   );
 }
