@@ -1,24 +1,15 @@
 import type { Metadata } from 'next';
-import { Fraunces, Cormorant_Garamond, Cormorant, DM_Sans } from 'next/font/google';
+import { Instrument_Serif, DM_Sans } from 'next/font/google';
 import './globals.css';
 import ScrollObserver from '@/components/ScrollObserver';
+import Navbar from '@/components/kaprica/Navbar';
+import Footer from '@/components/kaprica/Footer';
 
-const fraunces = Fraunces({
-  variable: '--font-fraunces',
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-});
-
-const cormorantGaramond = Cormorant_Garamond({
+const instrumentSerif = Instrument_Serif({
   variable: '--font-serif',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-});
-
-const cormorant = Cormorant({
-  variable: '--font-serif-alt',
-  subsets: ['latin'],
-  weight: ['300', '400'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
 });
 
 const dmSans = DM_Sans({
@@ -40,11 +31,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${cormorantGaramond.variable} ${cormorant.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${instrumentSerif.variable} ${dmSans.variable} h-full antialiased snap-y snap-mandatory scroll-smooth overflow-y-auto`}
     >
       <body className="min-h-full flex flex-col">
         <ScrollObserver />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
