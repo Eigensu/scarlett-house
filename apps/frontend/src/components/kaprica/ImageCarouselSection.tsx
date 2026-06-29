@@ -5,30 +5,40 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const IMAGES = [
-  'https://images.unsplash.com/photo-1473093295043-cdd812d0e601', // Pasta
-  'https://images.unsplash.com/photo-1513104890138-7c749659a591', // Pizza
-  'https://images.unsplash.com/photo-1555939594-58d7cb561ad1', // Cooking/Flame
-  'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb', // Wine
-];
+import { ambienceImages, foodImages, drinkImages, getRandomItems } from '@/lib/assets';
 
 export default function ImageCarouselSection() {
+  const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    // Mixture of food, drink, and ambience
+    const selectedAmbience = getRandomItems(ambienceImages, 2);
+    const selectedFood = getRandomItems(foodImages, 2);
+    const selectedDrink = getRandomItems(drinkImages, 1);
+    
+    // Shuffle them together
+    const mixed = getRandomItems([...selectedAmbience, ...selectedFood, ...selectedDrink], 4);
+    setImages(mixed.length > 0 ? mixed : [ambienceImages[0] || '']);
+  }, []);
+
+  useEffect(() => {
+    if (images.length === 0) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 10000); // 10 seconds auto-scroll
 
     return () => clearInterval(timer);
-  }, []);
+  }, [images]);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
+    if (images.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? IMAGES.length - 1 : prev - 1));
+    if (images.length === 0) return;
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   return (
@@ -42,14 +52,16 @@ export default function ImageCarouselSection() {
           transition={{ duration: 1.5, ease: 'easeInOut' }}
           className="absolute inset-0 z-0"
         >
-          <Image 
-            src={IMAGES[currentIndex]} 
-            alt={`Kaprica Carousel Image ${currentIndex + 1}`} 
-            fill
-            sizes="100vw"
-            unoptimized={true}
-            className="object-cover"
-          />
+          {images.length > 0 && (
+            <Image 
+              src={images[currentIndex] || ''} 
+              alt={`Scarlett House Carousel Image ${currentIndex + 1}`} 
+              fill
+              sizes="100vw"
+              unoptimized={true}
+              className="object-cover"
+            />
+          )}
           {/* Subtle dark overlay to match Kaprica's moody lighting */}
           <div className="absolute inset-0 bg-black/20" />
         </motion.div>

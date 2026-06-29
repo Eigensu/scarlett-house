@@ -3,9 +3,37 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ambienceImages, foodImages, getRandomItems } from '@/lib/assets';
 
 export default function LandingHero() {
   const [isVisible, setIsVisible] = useState(true);
+  const [images, setImages] = useState<string[]>([ambienceImages[0] || '']);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Select a mix of ambience and food, keep the first one stable for hydration
+    const availableAmbience = ambienceImages.slice(1);
+    const selectedAmbience = getRandomItems(availableAmbience, Math.min(5, availableAmbience.length));
+    const selectedFood = getRandomItems(foodImages, Math.min(2, foodImages.length));
+    
+    const selected = [
+      ambienceImages[0],
+      ...selectedAmbience,
+      ...selectedFood
+    ].filter(Boolean);
+    
+    // Shuffle the tail so the first image matches SSR
+    const tail = getRandomItems(selected.slice(1), selected.length - 1);
+    setImages([selected[0], ...tail]);
+  }, []);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images]);
 
   useEffect(() => {
     // If the user refreshes while already scrolled down the page,
@@ -51,22 +79,31 @@ export default function LandingHero() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#080F0F] cursor-pointer"
         >
-          <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-            <Image 
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" 
-              alt="Kaprica Table Setting" 
-              fill
-              priority
-              sizes="100vw"
-              unoptimized={true}
-              className="object-cover"
-            />
+          <div className="absolute inset-0 w-full h-full z-0 pointer-events-none bg-[#080F0F]">
+            {images.map((src, index) => (
+              <motion.div
+                key={src}
+                className="absolute inset-0 z-0 pointer-events-none"
+                animate={{ opacity: index === currentIndex ? 1 : 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                initial={{ opacity: index === 0 ? 1 : 0 }}
+              >
+                <Image 
+                  src={src} 
+                  alt="Scarlett House" 
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </motion.div>
+            ))}
             <div className="absolute inset-0 bg-black/40 z-10" />
           </div>
 
           <div className="relative z-20 flex items-center justify-center h-full w-full pointer-events-none">
-            <h1 className="font-serif text-[#FDF0D5] text-[100px] md:text-[180px] lg:text-[240px] tracking-tight leading-none drop-shadow-2xl">
-              Kaprica
+            <h1 className="font-serif text-[#FDF0D5] text-[60px] md:text-[120px] lg:text-[170px] tracking-tight leading-none drop-shadow-2xl text-center px-4">
+              Scarlett House
             </h1>
           </div>
         </motion.div>
