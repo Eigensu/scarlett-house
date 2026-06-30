@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Instrument_Serif, DM_Sans } from 'next/font/google';
 import './globals.css';
 import ScrollObserver from '@/components/ScrollObserver';
-import Navbar from '@/components/kaprica/Navbar';
-import Footer from '@/components/kaprica/Footer';
+import Navbar from '@/components/scarlett/Navbar';
+import Footer from '@/components/scarlett/Footer';
 
 const instrumentSerif = Instrument_Serif({
   variable: '--font-serif',

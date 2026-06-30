@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuModule from '@/components/kaprica/MenuModule';
-import MenuCarousel from '@/components/kaprica/MenuCarousel';
+import MenuModule from '@/components/scarlett/MenuModule';
+import MenuCarousel from '@/components/scarlett/MenuCarousel';
 
 export default function FunctionsPage() {
   const sampleMenu = [
@@ -38,7 +38,7 @@ export default function FunctionsPage() {
 
   return (
     <main className="w-full bg-[#841F27] relative z-10 text-[#FDF0D5] min-h-screen">
-      {/* Top spacer precisely matching Kaprica's 135px offset */}
+      {/* Top spacer precisely matching Scarlett House's 135px offset */}
       <div className="w-full h-[135px]" />
       
       {/* Custom Hero Text Block */}
