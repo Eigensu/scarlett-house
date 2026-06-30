@@ -3,23 +3,29 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const INTRO_IMAGES = [
-  "https://cdn.sanity.io/images/4asd31jo/production/1f01e67bd0cb138eb63a18b272c9e253764be9ff-1776x1185.jpg?w=1200&auto=format",
-  "https://cdn.sanity.io/images/4asd31jo/production/7d2e0cee0ed08a853c714ff3453f1429a90d7121-2097x1573.jpg?w=1200&auto=format",
-  "https://cdn.sanity.io/images/4asd31jo/production/8914bc8ea8412549e15a743d869e318a612a4745-6989x5242.jpg?w=1200&auto=format",
-  "https://cdn.sanity.io/images/4asd31jo/production/2490a4b9b2fe89952ffd9f11e9b217cba13a27c4-2097x1573.jpg?w=1200&auto=format",
-  "https://cdn.sanity.io/images/4asd31jo/production/9821a52638ae16c742fbb2699ec5dfb123660908-6989x5242.jpg?w=1200&auto=format"
-];
+import { ambienceImages, getRandomItems } from '@/lib/assets';
 
 export default function IntroSection() {
   const [imgIndex, setImgIndex] = useState(0);
+  const [images, setImages] = useState<string[]>([ambienceImages[0] || '']);
 
   useEffect(() => {
+    // 5 random ambience images
+    const available = ambienceImages.slice(1);
+    const selected = [ambienceImages[0], ...getRandomItems(available, Math.min(4, available.length))];
+    
+    // Shuffle the tail
+    const tail = getRandomItems(selected.slice(1), selected.length - 1);
+    setImages([selected[0], ...tail]);
+  }, []);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
     const interval = setInterval(() => {
-      setImgIndex((prev) => (prev + 1) % INTRO_IMAGES.length);
+      setImgIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   return (
     <section className="relative w-full h-[100svh] bg-[#851F27] flex flex-col justify-center items-center overflow-hidden z-20">
@@ -38,28 +44,29 @@ export default function IntroSection() {
           }
         `}} />
         <div className="animate-marquee font-serif text-[20px] leading-[20px] tracking-wide text-[#FDF0D5]">
-          {Array(20).fill("...still learning the new system so feel free to call us... 0447 043 404 • ").map((text, i) => (
+          {Array(20).fill("Experiences • Wine & Cheese • Red Room • Set Menu • Malla Special • Delivery • Brunch • Retail • ").map((text, i) => (
             <span key={i} className="px-4 whitespace-pre">{text}</span>
           ))}
         </div>
       </div>
 
-      <div className="w-[588px] max-w-full flex flex-col items-center justify-center text-left gap-[35px] z-10 relative px-4 md:px-0">
-        <p className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-left w-full">
-          Kaprica is the final stop. The table where all walks sit together in search of a taste of home.
-        </p>
+      <div className="w-[780px] max-w-full flex flex-col items-center justify-center gap-[25px] z-10 relative px-4 md:px-0 pt-[60px] md:pt-[80px]">
+        <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto flex flex-col gap-4">
+          <p>Warm, nostalgic, and effortlessly sophisticated.</p>
+          <p>Scarlett doesn’t speak like a fine dining restaurant trying to impress you with complicated words, nor do we believe in using imposing language such as “dangerous” or “ruin.” Instead, our voice feels personal, inviting, and comforting.</p>
+        </div>
 
-        {/* Center Image Carousel - 2:1 aspect ratio */}
-        <div className="relative w-full aspect-[2/1]">
-          {INTRO_IMAGES.map((src, idx) => (
+        {/* Center Image Carousel - cinematic aspect ratio */}
+        <div className="relative w-full aspect-[2.25/1]">
+          {images.map((src, idx) => (
             <Image
               key={src}
               src={src}
-              alt="Kaprica Atmosphere"
+              alt="Scarlett House Atmosphere"
               fill
-              sizes="(max-width: 768px) 100vw, 588px"
-              priority={idx === 0}
               unoptimized={true}
+              sizes="(max-width: 768px) 100vw, 780px"
+              priority={idx === 0}
               className={`object-cover transition-opacity duration-1000 absolute inset-0 ${
                 idx === imgIndex ? 'opacity-100' : 'opacity-0'
               }`}
@@ -67,9 +74,9 @@ export default function IntroSection() {
           ))}
         </div>
 
-        <p className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-left w-full">
-          Market fresh ingredients cooked in a certain type of way, met with hospitality and an old world charm. Life as it was, and always should be.
-        </p>
+        <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto">
+          <p>Our brand language is rooted in comfort, community, and storytelling while maintaining a sense of understated luxury. It balances old-world charm with contemporary taste, making guests feel as though they're stepping into a home rather than just another restaurant.</p>
+        </div>
       </div>
 
     </section>

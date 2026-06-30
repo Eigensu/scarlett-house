@@ -72,9 +72,9 @@ export default function Navbar() {
           scrolled ? 'py-4' : 'bg-transparent py-6'
         } ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
       >
-        <div className="w-full px-6 md:px-12 grid grid-cols-3 items-center">
+        <div className="w-full px-6 md:px-12 flex items-center justify-between relative">
           {/* Left: Menu */}
-          <div className="flex justify-start">
+          <div className="flex justify-start relative z-10">
             <button
               onClick={() => setIsOverlayOpen(true)}
               className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
@@ -84,36 +84,16 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Center: Kaprica Logo */}
-          <div className="flex justify-center">
-            <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-              <h1 className="font-serif text-[36px] md:text-[70px] text-[#841F27] tracking-tight leading-none">
-                Kaprica
+          {/* Center: Scarlett House Logo */}
+          <div className="absolute left-1/2 -translate-x-1/2 z-0 w-full text-center pointer-events-none">
+            <Link href="/" className="inline-block pointer-events-auto hover:opacity-80 transition-opacity">
+              <h1 className="font-serif text-[30px] md:text-[60px] text-[#841F27] tracking-tight leading-none whitespace-nowrap">
+                Scarlett House
               </h1>
-            </Link>
-          </div>
-
-          {/* Right: Book Now */}
-          <div className="flex justify-end">
-            <Link
-              href="/booking"
-              className="hidden md:inline-flex px-6 py-2.5 bg-[#841F27] text-[#FDF0D5] rounded-[40px] hover:opacity-80 transition-opacity font-sans text-[13px] md:text-[14px] tracking-wide"
-            >
-              Book Now
             </Link>
           </div>
         </div>
       </header>
-
-      {/* Mobile Sticky Book Now Button */}
-      <div className="md:hidden fixed bottom-6 left-0 right-0 z-[80] flex justify-center px-6 pointer-events-none mix-blend-difference">
-        <Link
-          href="/booking"
-          className="pointer-events-auto bg-[#841F27] text-[#FDF0D5] px-8 py-4 rounded-full font-sans text-[14px] tracking-wide shadow-lg hover:opacity-90 transition-opacity"
-        >
-          Book Now
-        </Link>
-      </div>
 
       <AnimatePresence>
         {isOverlayOpen && (
@@ -125,8 +105,8 @@ export default function Navbar() {
             className="fixed inset-0 z-[110] bg-[#EBE3D5] flex flex-col items-center justify-between py-6 md:py-8 overflow-y-auto"
           >
             {/* Overlay Header */}
-            <div className="w-full px-6 md:px-12 grid grid-cols-3 items-center shrink-0">
-              <div className="flex justify-start">
+            <div className="w-full px-6 md:px-12 flex items-center justify-between relative shrink-0">
+              <div className="flex justify-start relative z-10">
                 <button
                   onClick={() => setIsOverlayOpen(false)}
                   className="font-serif text-[24px] md:text-[30px] text-[#841F27] hover:opacity-70 transition-opacity"
@@ -134,20 +114,11 @@ export default function Navbar() {
                   Close
                 </button>
               </div>
-              <div className="flex justify-center">
-                <Link href="/" onClick={() => setIsOverlayOpen(false)} className="inline-block hover:opacity-80 transition-opacity">
-                  <h2 className="font-serif text-[40px] md:text-[60px] text-[#080F0F] tracking-tight leading-none">
-                    Kaprica
+              <div className="absolute left-1/2 -translate-x-1/2 z-0 w-full text-center pointer-events-none">
+                <Link href="/" onClick={() => setIsOverlayOpen(false)} className="inline-block pointer-events-auto hover:opacity-80 transition-opacity">
+                  <h2 className="font-serif text-[34px] md:text-[50px] text-[#080F0F] tracking-tight leading-none whitespace-nowrap">
+                    Scarlett House
                   </h2>
-                </Link>
-              </div>
-              <div className="flex justify-end">
-                <Link
-                  href="/booking"
-                  onClick={() => setIsOverlayOpen(false)}
-                  className="px-6 py-2.5 bg-[#841F27] text-[#FDF0D5] rounded-[40px] hover:opacity-80 transition-opacity font-sans text-[13px] md:text-[14px] tracking-wide"
-                >
-                  Book Now
                 </Link>
               </div>
             </div>
@@ -155,8 +126,8 @@ export default function Navbar() {
             {/* Main Links */}
             <nav className="flex-1 flex flex-col items-center justify-center gap-2 mt-8 md:mt-12 shrink-0">
               {[
-                { name: 'Eat at Kaprica', href: '/eat' },
-                { name: 'Drink at Kaprica', href: '/drink' },
+                { name: 'Eat at Scarlett House', href: '/eat' },
+                { name: 'Drink at Scarlett House', href: '/drink' },
                 { name: 'Parties', href: '/functions' },
               ].map((link, i) => (
                 <motion.div
