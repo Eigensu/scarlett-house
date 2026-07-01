@@ -7,7 +7,6 @@ import Navbar from '@/components/scarlett/Navbar';
 
 export default function PartiesPage() {
   const heroImage = getCloudinaryUrl(ImageMap.parties[0] || ImageMap.hero[0]);
-  const contactImage = getCloudinaryUrl(ImageMap.carousel[1]);
   const packageImage = getCloudinaryUrl(ImageMap.carousel[2]);
 
   return (
@@ -36,29 +35,13 @@ export default function PartiesPage() {
           <h1 className="font-serif text-[60px] md:text-[90px] lg:text-[120px] text-[#FDF0D5] leading-none drop-shadow-xl">
             Private Parties
           </h1>
+          <a
+            href="tel:9768583376"
+            className="mt-8 inline-block font-serif text-[16px] md:text-[18px] text-[#FDF0D5] border border-[#FDF0D5]/60 px-8 py-3 tracking-widest uppercase hover:bg-[#FDF0D5] hover:text-[#080F0F] transition-colors"
+          >
+            Call Us: 9768583376
+          </a>
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="relative w-full py-24 md:py-32 bg-[#080F0F] flex flex-col items-center justify-center text-center px-6 border-b border-[#FDF0D5]/10">
-        <p className="font-serif text-[20px] md:text-[28px] text-[#FDF0D5]/80 mb-6">
-          For private events, please call us at
-        </p>
-        <h1 className="font-serif text-[50px] md:text-[70px] lg:text-[90px] text-[#FDF0D5] tracking-tight">
-          9768583376
-        </h1>
-      </section>
-
-      {/* Divider Image */}
-      <section className="w-full h-[40vh] md:h-[60vh] relative">
-        <Image 
-          src={contactImage} 
-          alt="Scarlett House Ambience" 
-          fill 
-          unoptimized={true}
-          sizes="100vw" 
-          className="object-cover" 
-        />
       </section>
 
       {/* Sample Package Menu */}

@@ -1,147 +1,188 @@
 import React from 'react';
 import MenuModule from '@/components/scarlett/MenuModule';
 import MenuCarousel from '@/components/scarlett/MenuCarousel';
+import { getCloudinaryUrl, ImageMap } from '@/lib/cloudinary';
 
 export default function EatPage() {
-  const antipasto = [
-    ['House focaccia, olive oil', '5 for 2 pieces'],
-    ['Mount Zero mixed olives', '9'],
-    ['Pizzetta garlic, mozzarella', '14'],
-    ['Caprese buffalo mozzarella', '18'],
-    ['Prawns, garlic, chilli', '18'],
-    ['Bresaola, rocket, parmesan', '20'],
-    ['Mussels, tomato sugo, chili', '18'],
-    ['Antipasto plate', '26']
+  const foodImages = ImageMap.eat.map((id) => ({ src: getCloudinaryUrl(id, { width: 1200 }) }));
+
+  const cheeseProgram = [
+    ['Cheese Platter', 'Rs. 2,000/-', '9 Assorted Cheese Truffles: 3 Truffle Cacio E Pepe | 3 Mexican Peri Peri | 3 Basil Pesto, with Marinated Olives | Grapes | 2 Types Of Assorted Crackers'],
+    ['Cheese Domes - 80gms', '', ''],
+    ['Mexican Peri Peri', 'Rs. 700/-', ''],
+    ['Basil Pesto', 'Rs. 700/-', ''],
+    ['Truffle Cacio E Pepe', 'Rs. 700/-', ''],
+    ['Pecan Cranberry Basil', 'Rs. 700/-', ''],
+    ['(Additional Crackers — Rs. 65/-)', '', ''],
+    ['Cheese Fondue', 'Rs. 1,500/-', 'Emmental | Konark French Tomme | Oaxaca | Yellow Cheddar | Cherry Tomatoes | Olives | Herbed Croutons | Broccoli | Carrot']
   ];
 
-  const carousel1 = [
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/66c5e12d7136d894262692771d0808b30ff72ce3-5241x2948.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/885457611387bccf9987c97b905976e7700cffe2-6989x5242.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/d81b41fca01f6f469ee4e44007e50c6fad5393b4-6989x5242.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/87a527106a878c6be4cceea6cfd4f8dfda412e92-6989x5242.jpg?w=1200&auto=format' }
+  const salads = [
+    ['Scarlett Glow', 'Rs. 650/-', 'Blueberry | Snap Peas | Arugula | Carrot | Quinoa | Beetroot | Avocado | Blueberry Dressing'],
+    ['Fig & Burrata Bliss', 'Rs. 675/-', 'Wild Rocket Leaves | Figs | Pomegranate | Walnuts | Burrata | Sesame Seeds | Balsamic Vinaigrette'],
+    ['Caesar Salad (Veg / Chicken / Prawns)', 'Rs. 625 / 650 / 675/-', 'Romaine | Croutons | Shaved Parmesan | Cherry Tomatoes | Kalamata Olives | Caesar Dressing'],
+    ['Thai Garden Chicken Salad', 'Rs. 650/-', 'Grilled Chicken | Iceberg Lettuce | Carrots | Red Cabbage | Ripe Mango | Baby Red Radish | Picante Cashew | Peanut Thai Dressing']
   ];
 
-  const pasta = [
-    ['Spaghetti, prawns, tomato sugo, chilli', '30'],
-    ['Spaghetti vongole, garlic, thyme, chilli', '30'],
-    ['Spaghetti veal pork meatballs, tomato sugo', '30'],
-    ['Rigatoni, lamb shoulder ragu', '30'],
-    ['Gnocchi Sorrentina, tomato sugo, mozzarella, basil', '30'],
-    ['Risotto of the day', '30'],
-    ['Orecchiette with butternut squash and broccolini', '30']
+  const wraps = [
+    ['Tofu Chilli Wrap', 'Rs. 625/-', 'Carrot | French Beans | Fried Tofu | Spicy Asian Sauce | Chipotle Mayo'],
+    ['Paneer Tikka Roll', 'Rs. 625/-', 'Paneer Tikka | Lettuce | Sour Cream | Tomato | Pickled Onion | Cilantro Ranch | Coriander'],
+    ['Chicken Shawarma', 'Rs. 650/-', 'Harissa Marinated Chicken | Garlic Toum | French Fries | Pickled Veggies'],
+    ['Chicken Franko', 'Rs. 650/-', 'Indian Spiced Shredded Chicken | Coriander | Pickle Onion | Cilantro Ranch']
   ];
 
-  const pizza = [
-    ['Margherita - tomato, mozzarella, basil', '25'],
-    ['Puttanesca - tomato, mozz, olives, anchovy, capers, cherry tomato, chilli', '30'],
-    ['Broccoli - mozzarella, broccoli, chilli, parmesan, lemon', '30'],
-    ['Potato - mozzarella, potato, caramelised onions, rosemary', '30'],
-    ['Mushroom Deluxe - asiago, swiss brown and trumpet mushrooms', '30'],
-    ['Scarlett House X - mozzarella, peppers, zucchini, eggplant, olives', '30'],
-    ['Capricciosa - tomato, mozz, ham, mushroom, olives, artichoke', '30'],
-    ['Hawaiian - tomato, mozz, ham, golden circle pineapple', '30'],
-    ['Prosciutto - tomato, mozzarella, basil, prosciutto di parma', '30'],
-    ['Pancetta - tomato, mozzarella, pancetta, rocket, parmesan', '30'],
-    ['Mario - tomato, mozzarella, red onion, chilli, pancetta, parmesan', '30'],
-    ['Mr John - tomato, mozzarella, pesto, hot salami', '30'],
-    ['Mr Prawn - tomato, mozz, prawns, chilli, cherry tomato, basil', '30'],
-    ['Salmone - tomato, mascarpone, red onion, smoked salmon, roe', '30'],
-    ['Additions', '3'],
-    ['Green leaves, radicchio, orange', '15'],
-    ['Rocket and fennel salad', '13']
+  const sandwiches = [
+    ['Bombay Masala Toast', 'Rs. 575/-', 'Multigrain Sourdough | Potato Masala | Tomato | Beetroot | Onion | Cheese Slice | Coriander Mint Chutney | Garlic Chutney | Sev | Ketchup | Vegetable Chips'],
+    ['Ashwagandha Honey Toast', 'Rs. 575/-', 'Sourdough | Ashwagandha Honey | Cream Cheese | Almond Flakes'],
+    ['Avocado Toast', 'Rs. 650/-', 'Multigrain Sourdough | Sundried Tomato Pesto | Avocado | Sour Cream | Almond Flakes | Bubu Arare | Vegetable Chips'],
+    ['Chilli Cheese Toast', 'Rs. 650/-', 'Chillies | Gruyere | Mozzarella | Parmesan | Cheddar Cheese | Buttered Bread | Bell Peppers | Jalapeños'],
+    ['Truffle & Shroom Toast', 'Rs. 650/-', 'Truffle Cream Cheese | Shitake | King Oyster | Balsamic | Truffle Oil | Multigrain Sourdough | Vegetable Chips'],
+    ['Burrata Bellonate', 'Rs. 675/-', 'Baguette | Sundried Tomato | Baby Spinach | Burrata | Pesto | Caramelised Onion | Vegetable Chips'],
+    ['Chicken Katsu Sando', 'Rs. 695/-', 'Sliced Bread | Chicken Katsu | Curry Sauce | Red Cabbage Slaw | Cheese | Pickled Jalapeño | Vegetable Chips']
   ];
 
-  const carousel2 = [
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/30323e09579593db9233a90a4bbb5304c7616dd0-5242x6989.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/a8f90e1345197e409dba20884dd415bc6dd54f7b-6989x5242.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/68990bcc1247d0af9f7df4575cf2ec551d91c045-5042x6723.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/e841c6c348d1bb34ea6f9441e5e0f60ef7349ff0-5242x6989.jpg?w=1200&auto=format' }
+  const smallPlates = [
+    ['Blazing Banana Fries', 'Rs. 575/-', 'Spiced Banana Frites | Cilantro Ranch'],
+    ['Arbi Tuk', 'Rs. 575/-', 'Crispy Fried Arbi | Chef Special Spices | House Dip | Tamarind & Dates Chutney'],
+    ['Veg Jhol Momos', 'Rs. 575/-', 'Homemade Momos | Homemade Spicy Crispy Chilli Oil'],
+    ['Mushroom Asada Tacos', 'Rs. 595/-', 'Portobello Mushroom | Corn Tacos | Spicy Chipotle Sauce | Guacamole | Pickled Onion'],
+    ['Trio Hummus', 'Rs. 595/-', 'Classic Hummus | Edamame Hummus | Podi Hummus | Pita | Lavash Olives'],
+    ['Scarlett Millet Nachos', 'Rs. 595/-', 'Crispy Millet Nachos | Rich Cheese Sauce | Jalapeños | Pico De Gallo | Velvety Sour Cream'],
+    ['Brussels Blaze Tofu', 'Rs. 595/-', 'Crispy Tofu | Brussels Sprouts | Bell Peppers | Spicy Asian Chilli Glaze'],
+    ['Crinkle Truffle Fries', 'Rs. 595/-', 'Crispy Crinkle Fries | Truffle Oil | Parmesan Cheese | Fresh Chives'],
+    ['Korean Shroom Wings', 'Rs. 650/-', 'Crispy Oyster Mushrooms | Gochujang Glaze | Creamy Labneh'],
+    ['Edamame Phyllo Mousse', 'Rs. 650/-', 'Edamame | Olive Oil | Lemon | Sea Salt'],
+    ['Buratta Chaat Au Lait', 'Rs. 675/-', 'Burrata | Beet Chips | Dehydrated Okra | Pomegranate | Fresh Jalapeño | Avocado | Onion | Tomato | Parmesan | Sev | Cilantro Ranch | Peanuts'],
+    ['Chicken Jhol Momos', 'Rs. 595/-', 'Homemade Momos | Homemade Spicy Crispy Chilli Oil'],
+    ['Crispy Chicken', 'Rs. 625/-', 'Hammered Buttermilk Fried Chicken | Chipotle Mayo'],
+    ['Pulled Chicken Taco', 'Rs. 650/-', 'Braised Chicken | Cooling Sour Cream | Tucked In Hard Shell Taco'],
+    ['Chicken Tunisian', 'Rs. 650/-', 'Spiced Chicken Marinate | Harissa | African Spices'],
+    ['Madras Calamari', 'Rs. 695/-', 'Fried Calamari | Homemade Madras Spice | Curry Leaves | Fried Coconut | Dried Chilli | Fried Garlic'],
+    ['Gambas Español', 'Rs. 750/-', 'Fresh Prawns | White Wine | Olive Oil | Garlic | Spices | Parsley | Multigrain Sourdough'],
+    ['Baked Smoked Salmon', 'Rs. 795/-', 'Smoked Salmon | Cream Cheese | Sour Cream | Dill | Capers | Lemon Zest | Crisp Phyllo | Chilli Jam | Toasted Almonds'],
+    ['Thecha', '', ''],
+    ['Paneer Thecha', 'Rs. 675/-', 'Cottage Cheese | Spicy Peanut Coriander Thecha Marinade | Cilantro Ranch'],
+    ['Chicken Thecha', 'Rs. 695/-', 'Chicken Mince | Spicy Peanut Coriander Thecha Marinade | Cilantro Ranch'],
+    ['Prawns Thecha On Toast', 'Rs. 720/-', 'Prawns | Spicy Peanut Coriander Thecha Marinade | Sourdough'],
+    ['Chow Mein Thecha', 'Rs. 695/750/-', 'Chicken Mince / Cottage Cheese | Wok Tossed Chowmein | Bold Maharashtrian Thecha']
   ];
 
-  const dolci = [
-    ['Affogato', '8'],
-    ['Affogato with frangelico', '14'],
-    ['Tiramisu', '15'],
-    ['Ice Cream Trio (Chocolate, Lemon, Raspberry)', '14'],
-    ['Crème caramel', '14'],
-    ['Chocolate Nemesis Cake, Crème Fraîche', '15'],
-    ['Tiramisu Birthday Cake (Serves 8-10)', '24 Hours Notice']
+  const sushi = [
+    ['Tofu Sunset Roll', 'Rs. 675/-', 'Avocado | Spring Onion | Cucumber | Tofu | Togarashi | Teriyaki Sauce | Sesame Seed | Tanuki | Spicy Mayo'],
+    ['Madras Beetroot Roll', 'Rs. 675/-', 'Avocado | Pickle Beetroot | Edamame | Coconut Cream Cheese | Togarashi | Madras Sriracha Sauce | Fried Curry Leaves'],
+    ['Enoki Truffle Maki', 'Rs. 675/-', 'Truffle Oil | Avocado | Enoki Tempura | Vegan Truffle Cream Cheese | Fried Quinoa | Spicy Mayo'],
+    ['Emerald Avocado Roll', 'Rs. 675/-', 'Tempura Tofu | Cream Cheese | Avocado | Spicy Mayo'],
+    ['Koyo Umami Futamaki', 'Rs. 675/-', 'Tempura Umami Mushrooms | Avocado | Asparagus | Cucumber | Iceberg Lettuce'],
+    ['Prawn Tempura Roll', 'Rs. 695/-', 'Avocado | Prawn Tempura | Lotus Chips | Spicy Mayo | Cream Cheese | Teriyaki'],
+    ['Salmon Avocado Roll', 'Rs. 695/-', 'Salmon | Cream Cheese | Togarashi | Avocado | Tanuki | Kewpie Mayo | Tobiko']
   ];
 
-  const carousel3 = [
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/86930e59c81b442c91f089e7524f8cc7aede8b89-5242x3931.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/f517548ccd1e9361a6ef028794c1ee88fbab8917-3728x4971.jpg?w=1200&auto=format' },
-    { src: 'https://cdn.sanity.io/images/4asd31jo/production/89ce50f7f4b7f68b75e215f01b8bd8284a2b8e14-5242x2949.jpg?w=1200&auto=format' }
+  const largePlates = [
+    ['Scarlett Bowl Veg', 'Rs. 795/-', 'Seared Tofu | Garden Greens | Avocado | Broccoli | Bok Choy | Snow Peas | Edamame | Beetroot Rice'],
+    ['Mizo Tofu Curry', 'Rs. 795/-', 'Mizoram Style Curry | Black Wild Rice | Zawngtah Raw Salad'],
+    ['Cottage Cheese Ghassi', 'Rs. 795/-', 'Spicy Coconut Rich Ghassi | Cottage Cheese | Crispy Mangalorean Kori Roti Or Malabar Paratha'],
+    ['Shirataki Noodles', 'Rs. 825/-', 'Low Calorie Shirataki Noodles | Assorted Vegetables | Silken Tofu | Peanut | Sambal Sauce'],
+    ['Tofu Mango Curry Bowl', 'Rs. 825/-', 'Tofu | Raw Mango | Coconut Milk | Indrani Rice'],
+    ['Millet Aglio Olio', 'Rs. 825/-', 'Millet Pasta | Parmesan Cheese | Herbs'],
+    ['Scarlett Mac & Cheese', 'Rs. 850/-', 'Jowar | Macaroni Pasta | Bechamel Sauce | Chives'],
+    ['Miso Butter Fettuccine', 'Rs. 850/-', 'Fettuccine Pasta | Miso Butter Sauce | Shitake | Parmesan | Multigrain Sourdough'],
+    ['Black Truffle Edamame Risotto', 'Rs. 850/-', 'Risotto Rice | Edamame Puree | Asparagus | Truffle Oil | Truffle Shavings | Crispy Capers | Chilli Oil'],
+    ['Spinach Ravioli', 'Rs. 850/-', 'Fresh Ravioli Stuffed With Spinach | Ricotta | Sage Burnt Butter Almond Sauce'],
+    ['Beetroot Mascarpone Ravioli', 'Rs. 850/-', 'Fresh Ravioli Filled With Beetroot | Ricotta Cheese | Velvety Mascarpone | Truffle Parmesan Sauce | Walnuts | Basil Oil Drizzle'],
+    ['Gnocchi With Porcini Cream', 'Rs. 795/-', 'Sweet Potato Gnocchi | Porcini Mushroom Cream Sauce | Garlic | Thyme | Parmesan | Served With Garlic Bread'],
+    ['Scarlett Bowl Chicken', 'Rs. 825/-', 'Chicken | Garden Greens | Avocado | Broccoli | Bok Choy | Snow Peas | Edamame | Beetroot Rice'],
+    ['Mizo Curry Chicken', 'Rs. 825/-', 'Mizoram Style Curry | Black Wild Rice | Zawngtah Raw Salad'],
+    ['Chicken Ghassi', 'Rs. 825/-', 'Spicy Coconut Rich Ghassi | Chicken | Crispy Mangalorean Kori Roti Or Malabar Paratha'],
+    ['White Butter Chicken', 'Rs. 825/-', 'Ludhiana Style Creamy Buttery Chicken Curry | French Baguette | White Butter Spread'],
+    ['Grilled Chicken', 'Rs. 850/-', 'Grilled Chicken Breast | Potato Mash | Balsamic Mushroom Sauce | Braised Asparagus'],
+    ['Prawn Ghassi', 'Rs. 850/-', 'Spicy Coconut Rich Ghassi | Prawns | Crispy Mangalorean Kori Roti Or Malabar Paratha'],
+    ['Malabar Prawn Curry Bowl', 'Rs. 875/-', 'Coconut Base Prawn Curry | Indrani Rice | Fried Curry Leaves | Kadu Manga Achar']
   ];
 
-  const digestivi = [
-    ['Stove top espresso', '1 cup / 2 cups / 4 cups', '4', '8', '12'],
-    ['Espresso Martini', '', '', '', '20'],
-    ['McIver’s Peppermint tea', '', '', '', '5'],
-    ['Nonino', 'Friuli, 35%', '', '', '12'],
-    ['Montenegro', 'Bologna, 23%', '', '', '12'],
-    ['Camatti', 'Genova, 20%', '', '', '12'],
-    ['Fernet Branca', 'Milano, 39%', '', '', '12'],
-    ['Alpe', 'Valle d’Aosta, 38%', '', '', '12'],
-    ['Rucolino', 'Ischia Naples, 30%', '', '', '12'],
-    ['Averna', 'Venezia, 29%', '', '', '12'],
-    ['Braulio', 'Venezia, 29%', '', '', '12'],
-    ['Ramazzotti', 'Milano, 30%', '', '', '12']
+  const desserts = [
+    ['Hazelnut Praline', 'Rs. 450/-', 'Chocolate Sponge | Chocolate Ganache | Hazelnut Praline Paste'],
+    ['Seasonal Cheesecake', 'Rs. 450/-', 'Seasonal Fruit Compote | Cream Cheese'],
+    ['Gluten-Free Cake', 'Rs. 495/-', '55% Dark Chocolate | Eggs'],
+    ['Basque Cheesecake', 'Rs. 495/-', 'Cream Cheese | Caramelised Top'],
+    ['Scarlett Fructose Bowl', 'Rs. 550/-', 'Dragon Fruit | Kiwi | Black Grapes | Blueberry | Greek Yoghurt | Citrus Dressing'],
+    ['Tiramisu', 'Rs. 550/-', 'Coffee & Rum-Soaked Lady Fingers | Mascarpone Cheese | Cocoa Powder'],
+    ['Kunafa French Toast', 'Rs. 625/-', 'Kunafa | Brioche Bread | Pistachio Praline | Hazelnut Praline | Vanilla Ice-Cream'],
+    ['Crème Brûlée French Toast', 'Rs. 675/-', 'Cream Brulee | Cream | Honey']
   ];
 
   return (
     <main className="w-full bg-[#47682c] relative z-10 text-[#FDF0D5] min-h-screen">
       {/* Top spacer precisely matching Scarlett House's 135px offset */}
       <div className="w-full h-[135px]" />
-      
-      <MenuModule 
-        title="ANTIPASTO" 
-        align="left" 
-        layout="layout-two" 
-        items={antipasto} 
+
+      <MenuModule
+        title="Scarlett Cheese Program"
+        align="left"
+        layout="layout-desc"
+        items={cheeseProgram}
       />
 
-      <MenuCarousel 
-        images={carousel1} 
-        align="right" 
+      <MenuModule
+        title="Salads"
+        subtitle="The Pause Between Stories"
+        align="right"
+        layout="layout-desc"
+        items={salads}
       />
 
-      <MenuModule 
-        title="PASTA" 
-        align="right" 
-        layout="layout-two" 
-        items={pasta} 
+      <MenuCarousel images={[foodImages[0]]} align="right" />
+
+      <MenuModule
+        title="Gluten Free Wraps"
+        subtitle="Hands-On Happiness"
+        note="Wraps Are Available In Malabar Paratha. Add On Fresh House Salad For Rs. 145/-"
+        align="left"
+        layout="layout-desc"
+        items={wraps}
       />
 
-      <MenuModule 
-        title="12” PIZZA" 
-        align="left" 
-        layout="layout-two" 
-        items={pizza} 
+      <MenuModule
+        title="Sandwiches"
+        subtitle="Hands-On Happiness"
+        align="right"
+        layout="layout-desc"
+        items={sandwiches}
       />
 
-      <MenuCarousel 
-        images={carousel2} 
-        align="right" 
+      <MenuCarousel images={[foodImages[1]]} align="left" />
+
+      <MenuModule
+        title="Small Plates"
+        subtitle="Where It All Begins"
+        align="left"
+        layout="layout-desc"
+        items={smallPlates}
       />
 
-      <MenuModule 
-        title="DOLCI" 
-        align="left" 
-        layout="layout-two" 
-        items={dolci} 
+      <MenuModule
+        title="Sushi"
+        subtitle="Wanderlust in a Roll"
+        align="right"
+        layout="layout-desc"
+        items={sushi}
       />
 
-      <MenuCarousel 
-        images={carousel3} 
-        align="left" 
+      <MenuCarousel images={[foodImages[2], foodImages[3]]} align="right" />
+
+      <MenuModule
+        title="Large Plates"
+        subtitle="The Comfort Chapter"
+        align="left"
+        layout="layout-desc"
+        items={largePlates}
       />
 
-      <MenuModule 
-        title="DIGESTIVI/AMARO" 
-        align="left" 
-        layout="layout-five" 
-        items={digestivi} 
+      <MenuModule
+        title="Desserts"
+        subtitle="The Memory Lane"
+        align="right"
+        layout="layout-desc"
+        items={desserts}
       />
 
       {/* Spacer block to reveal the fixed footer underneath */}

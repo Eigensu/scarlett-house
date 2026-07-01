@@ -59,13 +59,13 @@ export default function IntroSection() {
         </div>
       </div>
 
-      <div className="w-[780px] max-w-full flex flex-col items-center justify-center gap-[25px] z-10 relative px-4 md:px-0 pt-[60px] md:pt-[80px]">
+      <div className="w-[780px] max-w-full flex flex-col items-center justify-center gap-[20px] z-10 relative px-4 md:px-0 pt-[40px] md:pt-[56px] pb-[32px] md:pb-[48px]">
         <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto flex flex-col gap-4">
           <p>Welcome to a space where comfort, conversation, and good company come together.</p>
         </div>
 
         {/* Center Image Carousel - cinematic aspect ratio */}
-        <div className="relative w-full aspect-[2.25/1]">
+        <div className="relative w-full aspect-[2.6/1]">
           {images.map((src, idx) => (
             <Image
               key={src}

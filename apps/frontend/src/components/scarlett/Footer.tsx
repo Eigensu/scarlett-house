@@ -5,41 +5,31 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#FDF0D5] text-[#080F0F] p-[20px] z-50">
-      <div className="w-full h-full max-w-[1184px] mx-auto grid grid-cols-1 lg:grid-cols-7 gap-[20px] py-12">
-        
-        <div className="col-start-1 col-end-6 flex flex-col justify-between">
-          <Link href="/" className="inline-block hover:opacity-80 transition-opacity mt-[-10px]">
-            <h2 className="font-serif text-[64px] md:text-[128px] leading-[0.8] tracking-tight text-[#841F27]">
-              SCARLETT HOUSE
-            </h2>
-          </Link>
+    <footer className="relative w-full bg-[#FDF0D5] text-[#080F0F] px-[20px] pt-[20px] pb-[8px] z-50">
+      <div className="w-full h-full max-w-[1184px] mx-auto pt-12 pb-2">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-[20px]">
+          <div className="col-start-1 col-end-6 flex flex-col justify-between">
+            <Link href="/" className="inline-block hover:opacity-80 transition-opacity mt-[-10px]">
+              <h2 className="font-serif text-[64px] md:text-[128px] leading-[0.8] tracking-tight text-[#841F27]">
+                SCARLETT HOUSE
+              </h2>
+            </Link>
+          </div>
 
-          <p className="font-sans text-[15px] leading-[15px] max-w-sm mt-12 pb-2">
-            Scarlett House acknowedges the wurundjeri woi wurrung people of the kulin nation as the traditional owners of the land on which we live and work and pay our respects to elders past, present and future.
-          </p>
+          <div className="col-start-6 col-end-8 flex flex-col justify-between mt-12 lg:mt-0">
+            <p className="font-sans text-[15px] leading-[20px] max-w-sm">
+              A space designed for gathering, sharing, and creating memories where comfort, community, and conversation are at the heart of every experience.
+            </p>
+          </div>
         </div>
 
-        <div className="col-start-6 col-end-8 flex flex-col justify-between gap-12 mt-12 lg:mt-0">
-          <div className="flex flex-col gap-4 font-sans text-[15px] leading-[20px]">
-            <p>
-              4pm-10pm, Mon - Thurs<br/>
-              Noon - 10pm, Fri - Sun<br/>
-              50 Grattan Street, Carlton
-            </p>
-            <a href="tel:+610447043404" className="hover:text-[#841F27] transition-colors">
-              0447 043 404
-            </a>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 pb-2 font-sans text-[15px] leading-[15px]">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#841F27] transition-colors">
-              instagram
-            </a>
-            <span className="text-left md:text-right">
-              © Scarlett House 2026 | All rights reserved.
-            </span>
-          </div>
+        <div className="flex flex-row justify-between items-center gap-4 mt-10 font-sans text-[15px] leading-[15px] whitespace-nowrap">
+          <span className="text-left">
+            © Scarlett House 2026 | All rights reserved.
+          </span>
+          <span className="text-right">
+            Powered by @Eigensu
+          </span>
         </div>
       </div>
     </footer>

@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir /b \"c:\\\\Users\\\\Aanshuvi Shah\\\\Desktop\\\\Eigensu\\\\BINGE\\\\Scarlett\")"
+      "Bash(dir /b \"c:\\\\Users\\\\Aanshuvi Shah\\\\Desktop\\\\Eigensu\\\\BINGE\\\\Scarlett\")",
+      "Bash(ls ../../*.yaml ../../*.lock)",
+      "Bash(ls node_modules/framer-motion)",
+      "Bash(ls *.yaml *.lock package-lock.json pnpm-lock.yaml yarn.lock)",
+      "Bash(ls apps/frontend/node_modules/framer-motion)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/drink)",
+      "Bash(tail -60 /tmp/dev.log 2>/dev/null | grep -i -A5 \"error\\\\|drink\" | tail -80)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/eat)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/parties)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/experiences)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/experiences/set-menu)"
     ]
   }
 }

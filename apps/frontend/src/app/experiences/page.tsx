@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/scarlett/Footer';
 import Navbar from '@/components/scarlett/Navbar';
@@ -18,7 +19,7 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = false, extraContent }: ExperienceSectionProps) {
   return (
-    <section className="relative w-full py-24 md:py-32 px-6 md:px-12 bg-[#080F0F] overflow-hidden border-b border-[#FDF0D5]/10">
+    <section className="relative w-full py-10 md:py-14 px-6 md:px-12 bg-[#080F0F] overflow-hidden">
       <div className={`max-w-[1400px] mx-auto flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 md:gap-20 items-center`}>
         
         {/* Text Content */}
@@ -46,7 +47,7 @@ function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = f
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-1 w-full relative aspect-[4/5] md:aspect-square overflow-hidden rounded-[20px]"
+          className="flex-1 w-full relative aspect-[4/5] md:aspect-square overflow-hidden"
         >
           <Image 
             src={imageSrc} 
@@ -108,12 +109,12 @@ export default function ExperiencesPage() {
         imageSrc={getCloudinaryUrl(ImageMap.eat[0])}
         imageAlt="Set Menu"
         extraContent={
-          <div className="mt-12 w-full p-8 border border-[#FDF0D5]/20 bg-[#FDF0D5]/5 rounded-xl flex items-center justify-center">
-            {/* TODO: Replace placeholder with actual menu component when ready */}
-            <p className="font-serif text-[20px] md:text-[22px] text-[#FDF0D5]/60 uppercase tracking-widest">
-              Set Menu Coming Soon
-            </p>
-          </div>
+          <Link
+            href="/experiences/set-menu"
+            className="mt-12 inline-block font-serif text-[16px] md:text-[18px] text-[#FDF0D5] border border-[#FDF0D5]/60 px-8 py-3 tracking-widest uppercase hover:bg-[#FDF0D5] hover:text-[#080F0F] transition-colors"
+          >
+            View Set Menu
+          </Link>
         }
       />
 

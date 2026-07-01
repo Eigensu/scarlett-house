@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowLeft } from 'lucide-react';
 
 export default function Navbar() {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -62,6 +62,8 @@ export default function Navbar() {
   // Hide the header only on the home page when the hero is still visible
   const isHomePage = pathname === '/';
   const hideHeader = isHomePage && heroVisible && !isOverlayOpen;
+  const showBackLink = !isHomePage;
+  const backHref = pathname === '/experiences/set-menu' ? '/experiences' : '/';
 
   return (
     <>
@@ -73,15 +75,18 @@ export default function Navbar() {
         } ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
       >
         <div className="w-full px-6 md:px-12 flex items-center justify-between relative">
-          {/* Left: Menu */}
-          <div className="flex justify-start relative z-10">
-            <button
-              onClick={() => setIsOverlayOpen(true)}
-              className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
-              aria-label="Open Menu"
-            >
-              <span className="font-serif text-[18px] md:text-[20px]">Menu</span>
-            </button>
+          {/* Left: Back (non-home pages only) */}
+          <div className="flex justify-start relative z-10 min-w-[24px]">
+            {showBackLink && (
+              <Link
+                href={backHref}
+                className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
+                aria-label="Back"
+              >
+                <ArrowLeft size={18} />
+                <span className="font-serif text-[18px] md:text-[20px]">Back</span>
+              </Link>
+            )}
           </div>
 
           {/* Center: Scarlett House Logo */}
@@ -91,6 +96,17 @@ export default function Navbar() {
                 Scarlett House
               </h1>
             </Link>
+          </div>
+
+          {/* Right: Menu (always visible) */}
+          <div className="flex justify-end relative z-10 min-w-[24px]">
+            <button
+              onClick={() => setIsOverlayOpen(true)}
+              className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
+              aria-label="Open Menu"
+            >
+              <span className="font-serif text-[18px] md:text-[20px]">Menu</span>
+            </button>
           </div>
         </div>
       </header>
