@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuModule from '@/components/kaprica/MenuModule';
-import MenuCarousel from '@/components/kaprica/MenuCarousel';
+import MenuModule from '@/components/scarlett/MenuModule';
+import MenuCarousel from '@/components/scarlett/MenuCarousel';
 
 export default function EatPage() {
   const antipasto = [
@@ -37,7 +37,7 @@ export default function EatPage() {
     ['Broccoli - mozzarella, broccoli, chilli, parmesan, lemon', '30'],
     ['Potato - mozzarella, potato, caramelised onions, rosemary', '30'],
     ['Mushroom Deluxe - asiago, swiss brown and trumpet mushrooms', '30'],
-    ['Kaprica X - mozzarella, peppers, zucchini, eggplant, olives', '30'],
+    ['Scarlett House X - mozzarella, peppers, zucchini, eggplant, olives', '30'],
     ['Capricciosa - tomato, mozz, ham, mushroom, olives, artichoke', '30'],
     ['Hawaiian - tomato, mozz, ham, golden circle pineapple', '30'],
     ['Prosciutto - tomato, mozzarella, basil, prosciutto di parma', '30'],
@@ -91,7 +91,7 @@ export default function EatPage() {
 
   return (
     <main className="w-full bg-[#47682c] relative z-10 text-[#FDF0D5] min-h-screen">
-      {/* Top spacer precisely matching Kaprica's 135px offset */}
+      {/* Top spacer precisely matching Scarlett House's 135px offset */}
       <div className="w-full h-[135px]" />
       
       <MenuModule 

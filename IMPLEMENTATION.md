@@ -1,4 +1,4 @@
-# Scarlett House → Kaprica Redesign: Technical Implementation Spec
+# Scarlett House → Scarlett House Redesign: Technical Implementation Spec
 
 > **Direction:** Big images, lesser text, same colours. Atmosphere-first, editorial-minimal.
 > Every section must survive — content is reduced, not deleted. Images become the story.
@@ -76,7 +76,7 @@ These components are fully replaced by new implementations:
 |---|---|
 | `Masthead.tsx` | Merged into `HeroVideo.tsx` |
 | `HeroGrid.tsx` | Replaced by `HeroVideo.tsx` |
-| `Ticker.tsx` | Removed — incompatible with Kaprica aesthetic |
+| `Ticker.tsx` | Removed — incompatible with Scarlett House aesthetic |
 | `ValentinesMenu.tsx` | Replaced by `MenuCTA.tsx` |
 | `MangoMenu.tsx` | Replaced by `MenuCTA.tsx` |
 | `BelliniSection.tsx` | Replaced by `MenuCTA.tsx` |
