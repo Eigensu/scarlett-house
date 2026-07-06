@@ -33,7 +33,7 @@ export default function LocationsSection() {
         <div className="absolute inset-4 md:inset-8 z-0 opacity-0 transition-opacity duration-600 ease-in-out group-hover:opacity-100 overflow-hidden rounded-[45px] pointer-events-none flex flex-col items-center justify-center p-8 md:p-12 text-center">
           <div className="z-20 flex flex-col gap-6 font-serif text-[15px] md:text-[18px] lg:text-[20px] leading-relaxed text-[#FDF0D5] max-w-[80%] mx-auto opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100 ease-out drop-shadow-md">
             <h3 className="font-serif text-[28px] md:text-[36px] text-[#FDF0D5] leading-tight mb-2 drop-shadow-md">Heritage Bungalow</h3>
-            <p>Housed within a beautifully restored 80-year-old bungalow in Bandra, Scarlett House offers guests the feeling of stepping into a home filled with stories and memories.</p>
+            <p>Housed within a beautifully restored 90-year-old bungalow in Bandra, Scarlett House offers guests the feeling of stepping into a home filled with stories and memories.</p>
             <p>The space has been thoughtfully designed to celebrate togetherness, with each room contributing to the character and charm of the house.</p>
           </div>
         </div>

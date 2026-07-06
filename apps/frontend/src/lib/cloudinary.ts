@@ -12,6 +12,8 @@ export interface CloudinaryOptions {
  * Automatically applies f_auto (format) and q_auto (quality).
  */
 export function getCloudinaryUrl(publicId: string, options: CloudinaryOptions = {}) {
+  if (!publicId) return '';
+
   const crop = options.crop || 'fill';
   let transformations = `f_auto,q_auto,c_${crop}`;
   
@@ -28,6 +30,9 @@ export function getCloudinaryUrl(publicId: string, options: CloudinaryOptions = 
 // CENTRALIZED IMAGE ASSET MAP
 // ==========================================
 // All Cloudinary public IDs (without file extensions)
+
+export const NEW_AMBIENCE_CAROUSEL = "scarlett-house/ambience/ybchbhmdktfgylifh8nl";
+export const NEW_EXPERIENCES_SET_MENU = "scarlett-house/experiences/o4tuxevzrupjk7bgujkx";
 
 export const AMBIENCE = [
   "scarlett-house/ambience/RMS03674",
@@ -102,9 +107,9 @@ export const ImageMap = {
   
   // Carousel: Mix of all three
   carousel: [
-    ...AMBIENCE.slice(3, 8),
-    ...FOOD.slice(0, 2),
-    ...DRINKS.slice(0, 2)
+    AMBIENCE[14],
+    AMBIENCE[21],
+    NEW_AMBIENCE_CAROUSEL
   ],
   
   // Spaces: Mostly ambience

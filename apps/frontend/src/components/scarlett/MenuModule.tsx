@@ -23,7 +23,7 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
           align === 'left' ? "mr-auto" : "ml-auto"
         )}
       >
-        <h2 className="text-[60px] leading-[60px] uppercase font-serif tracking-normal text-[#FDF0D5] mb-[30px]">
+        <h2 className="text-[60px] leading-[60px] uppercase font-serif tracking-normal text-current mb-[30px]">
           {title}
           {subtitle && (
             <span className="block text-[20px] leading-[24px] italic normal-case tracking-normal mt-1">
@@ -38,7 +38,7 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
           </p>
         )}
 
-        <div className="w-full flex flex-col font-serif text-[20px] text-[#FDF0D5] tracking-normal leading-[30px]">
+        <div className="w-full flex flex-col font-serif text-[20px] text-current tracking-normal leading-[30px]">
           {layout === 'layout-desc' ? items.map((row, rowIndex) => {
             const [name, price, description] = row;
 

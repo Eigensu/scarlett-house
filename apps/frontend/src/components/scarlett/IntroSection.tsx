@@ -37,10 +37,10 @@ export default function IntroSection() {
   }, [images]);
 
   return (
-    <section className="relative w-full h-[100svh] bg-[#851F27] flex flex-col justify-center items-center overflow-hidden z-20">
+    <section className="relative w-full h-[100svh] bg-[#851F27] flex flex-col justify-center items-center overflow-hidden z-20 pb-[5vh]">
       
       {/* Diagonal Scrolling Banner (Behind Content) */}
-      <div className="absolute top-1/2 left-1/2 w-[200vw] h-[35px] bg-[#080F0F] -translate-x-1/2 -translate-y-1/2 -rotate-[8deg] z-0 flex items-center overflow-hidden">
+      <div className="absolute top-[48%] left-1/2 w-[200vw] h-[35px] bg-[#080F0F] -translate-x-1/2 -translate-y-1/2 -rotate-[8deg] z-0 flex items-center overflow-hidden">
         <style dangerouslySetInnerHTML={{__html: `
           @keyframes marquee {
             0% { transform: translateX(0%); }
@@ -59,13 +59,9 @@ export default function IntroSection() {
         </div>
       </div>
 
-      <div className="w-[780px] max-w-full flex flex-col items-center justify-center gap-[20px] z-10 relative px-4 md:px-0 pt-[40px] md:pt-[56px] pb-[32px] md:pb-[48px]">
-        <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto flex flex-col gap-4">
-          <p>Welcome to a space where comfort, conversation, and good company come together.</p>
-        </div>
-
+      <div className="w-[960px] max-w-[92vw] flex flex-col items-center justify-center gap-[25px] z-10 relative px-4 md:px-0 pt-[100px]">
         {/* Center Image Carousel - cinematic aspect ratio */}
-        <div className="relative w-full aspect-[2.6/1]">
+        <div className="relative w-full aspect-[2.25/1]">
           {images.map((src, idx) => (
             <Image
               key={src}
@@ -82,7 +78,9 @@ export default function IntroSection() {
           ))}
         </div>
 
-        <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto">
+        <div className="font-serif text-[20px] leading-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto flex flex-col gap-[15px]">
+          <p>Welcome to a space where comfort, conversation, and good company come together.</p>
+
           <p>Our brand language is rooted in comfort, community, and storytelling while maintaining a sense of understated luxury. It balances old-world charm with contemporary taste, making guests feel as though they're stepping into a home rather than just another restaurant.</p>
         </div>
       </div>

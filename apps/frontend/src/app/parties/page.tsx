@@ -85,17 +85,6 @@ export default function PartiesPage() {
         </div>
       </section>
 
-      {/* Another Divider Image */}
-      <section className="w-full h-[40vh] md:h-[60vh] relative">
-        <Image 
-          src={packageImage} 
-          alt="Scarlett House Ambience" 
-          fill 
-          unoptimized={true}
-          sizes="100vw" 
-          className="object-cover" 
-        />
-      </section>
 
       {/* Closing Note */}
       <section className="relative w-full py-32 bg-[#851F27] flex flex-col items-center justify-center text-center px-6">

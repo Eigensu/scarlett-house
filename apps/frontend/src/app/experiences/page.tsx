@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/scarlett/Footer';
 import Navbar from '@/components/scarlett/Navbar';
-import { ImageMap, getCloudinaryUrl } from '@/lib/cloudinary';
+import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU } from '@/lib/cloudinary';
 
 interface ExperienceSectionProps {
   title: string;
@@ -47,7 +47,7 @@ function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = f
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-1 w-full relative aspect-[4/5] md:aspect-square overflow-hidden"
+          className="flex-1 w-full relative aspect-[3/4] md:aspect-[2/3] overflow-hidden rounded-[20px]"
         >
           <Image 
             src={imageSrc} 
@@ -106,7 +106,7 @@ export default function ExperiencesPage() {
           "Our set menu brings together some of Scarlett House’s most-loved dishes in a thoughtfully curated dining experience.",
           "Gather around the table and experience the best of Scarlett House."
         ]}
-        imageSrc={getCloudinaryUrl(ImageMap.eat[0])}
+        imageSrc={getCloudinaryUrl(NEW_EXPERIENCES_SET_MENU)}
         imageAlt="Set Menu"
         extraContent={
           <Link
