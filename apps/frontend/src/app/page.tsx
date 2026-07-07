@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="w-full bg-[#080F0F] relative z-10">
       <LandingHero />
-      <div className="snap-start w-full h-[100svh] flex-shrink-0 relative z-10">
+      <div className="snap-start w-full min-h-[100svh] flex-shrink-0 relative z-10">
         <IntroSection />
       </div>
       <div className="snap-start w-full h-[100svh] flex-shrink-0 relative z-10">

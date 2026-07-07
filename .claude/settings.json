@@ -14,7 +14,27 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/eat)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/parties)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/experiences)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/experiences/set-menu)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/experiences/set-menu)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npx playwright *)",
+      "Bash(node -e ' *)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot2.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot3.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot4.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot5.js\")",
+      "Bash(sed -i \"s/3693 - 200/4550 - 200/\" shot5.js)",
+      "Bash(sed -i \"s/spirits-list3/spirits-list4/\" shot5.js)",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\debug-exp.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot-exp2.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot-carousel.js\")",
+      "Bash(node \"C:\\\\Users\\\\AANSHU~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Aanshuvi-Shah-Desktop-Eigensu-BINGE-Scarlett\\\\9af18dcc-d80e-4156-9001-331b1e4a0286\\\\scratchpad\\\\shot-carousel2.js\")",
+      "Bash(curl -s \"https://res.cloudinary.com/sgtiseox/image/upload/fl_getinfo/scarlett-house/drinks/Bandra_Babe\")",
+      "Bash(curl -s \"https://res.cloudinary.com/sgtiseox/image/upload/fl_getinfo/scarlett-house/drinks/First_Jobbers_Vent_Out_Session_\")",
+      "Bash(curl -s \"https://res.cloudinary.com/sgtiseox/image/upload/fl_getinfo/scarlett-house/drinks/First_Kiss\")"
     ]
   }
 }

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/scarlett/Footer';
 import Navbar from '@/components/scarlett/Navbar';
-import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU } from '@/lib/cloudinary';
+import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU, AMBIENCE } from '@/lib/cloudinary';
 
 interface ExperienceSectionProps {
   title: string;
@@ -47,7 +47,7 @@ function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = f
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-1 w-full relative aspect-[3/4] md:aspect-[2/3] overflow-hidden rounded-[20px]"
+          className="flex-1 w-full relative aspect-[4/3] md:aspect-[3/2] overflow-hidden"
         >
           <Image 
             src={imageSrc} 
@@ -149,8 +149,7 @@ export default function ExperiencesPage() {
           "Enjoy the warmth and flavours of Scarlett House from the comfort of your home.",
           "Our Juhu delivery menu brings your favourite dishes straight from our house to yours."
         ]}
-        /* TODO: Replace with final delivery artwork when available */
-        imageSrc={getCloudinaryUrl(ImageMap.carousel[3])}
+        imageSrc={getCloudinaryUrl(AMBIENCE[6])}
         imageAlt="Home Deliveries"
         reverse={true}
       />

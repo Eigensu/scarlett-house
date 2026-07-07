@@ -221,7 +221,7 @@ export default function DrinkPage() {
   ];
 
   return (
-    <main className="w-full bg-[#851F27] relative z-10 text-[#080F0F] min-h-screen">
+    <main className="w-full bg-[#851F27] relative z-10 text-[#FDF0D5] min-h-screen">
       {/* Top spacer precisely matching Scarlett House's 135px offset */}
       <div className="w-full h-[135px]" />
 

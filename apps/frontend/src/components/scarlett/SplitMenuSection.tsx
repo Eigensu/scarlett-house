@@ -10,7 +10,7 @@ export default function SplitMenuSection() {
   const [eatHover, setEatHover] = useState<string>(getCloudinaryUrl(ImageMap.eat[1]));
   
   const [drinkBg, setDrinkBg] = useState<string>(getCloudinaryUrl(ImageMap.drink[0] || ImageMap.eat[2]));
-  const [drinkHover, setDrinkHover] = useState<string>(getCloudinaryUrl(ImageMap.eat[3] || ImageMap.eat[0]));
+  const [drinkHover, setDrinkHover] = useState<string>(getCloudinaryUrl(ImageMap.drink[1] || ImageMap.drink[0] || ImageMap.eat[0]));
 
   useEffect(() => {
     // Randomize Eat images
@@ -21,10 +21,9 @@ export default function SplitMenuSection() {
     // Randomize Drink images
     // If only 1 drink image exists, fallback to food for the hover state
     const allDrinks = ImageMap.drink.length > 0 ? ImageMap.drink : ImageMap.eat;
-    const drinkSelected1 = getRandomItems(allDrinks, 1)[0] || '';
-    
-    const remaining = ImageMap.eat.filter(img => img !== eatSelected[0] && img !== eatSelected[1] && img !== drinkSelected1);
-    const drinkSelected2 = getRandomItems(remaining.length > 0 ? remaining : ImageMap.eat, 1)[0] || '';
+    const drinkSelected = getRandomItems(allDrinks, Math.min(2, allDrinks.length));
+    const drinkSelected1 = drinkSelected[0] || '';
+    const drinkSelected2 = drinkSelected[1] || drinkSelected[0] || '';
 
     setDrinkBg(getCloudinaryUrl(drinkSelected1));
     setDrinkHover(getCloudinaryUrl(drinkSelected2));

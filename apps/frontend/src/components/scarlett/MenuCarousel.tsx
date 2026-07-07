@@ -26,7 +26,7 @@ export default function MenuCarousel({ images, align, className }: MenuCarouselP
       <div className="w-full grid grid-cols-7">
         <div 
           className={clsx(
-            "relative w-full aspect-[2/1] overflow-hidden",
+            "relative w-full aspect-[2/3] overflow-hidden",
             align === 'left' ? "col-span-7 md:col-span-4 md:col-start-1" : "col-span-7 md:col-span-4 md:col-start-4"
           )}
         >

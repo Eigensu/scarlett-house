@@ -54,7 +54,7 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
             // Subheading row: no price, no description
             if (!price && !description) {
               return (
-                <div key={rowIndex} className="w-full uppercase text-[18px] tracking-wide mt-6 mb-2 first:mt-0">
+                <div key={rowIndex} className="w-full uppercase text-[18px] tracking-wide mt-2 mb-2 first:mt-0">
                   {name}
                 </div>
               );
