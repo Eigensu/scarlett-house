@@ -60,7 +60,7 @@ export default function SplitMenuSection() {
 
         {/* Large S */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-600 ease-in-out group-hover:opacity-100 pointer-events-none">
-          <span className="font-serif text-[#47682C] text-[120svh] leading-[105svh] opacity-80 mix-blend-screen">S</span>
+          <span className="font-serif text-[#851F27] text-[120svh] leading-[105svh] opacity-80 mix-blend-multiply">S</span>
         </div>
 
         {/* Text */}
@@ -95,7 +95,7 @@ export default function SplitMenuSection() {
 
         {/* Large S */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-600 ease-in-out group-hover:opacity-100 pointer-events-none">
-          <span className="font-serif text-[#080F0F] text-[120svh] leading-[105svh] opacity-80 mix-blend-multiply">S</span>
+          <span className="font-serif text-[#851F27] text-[120svh] leading-[105svh] opacity-80 mix-blend-multiply">S</span>
         </div>
 
         {/* Text */}

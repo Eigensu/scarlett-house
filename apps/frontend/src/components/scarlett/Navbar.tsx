@@ -144,7 +144,7 @@ export default function Navbar() {
               {[
                 { name: 'Eat at Scarlett House', href: '/eat' },
                 { name: 'Drink at Scarlett House', href: '/drink' },
-                { name: 'Parties', href: '/functions' },
+                { name: 'Parties', href: '/parties' },
               ].map((link, i) => (
                 <motion.div
                   key={link.name}
