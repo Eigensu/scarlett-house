@@ -1,12 +1,8 @@
 import React from 'react';
 import MenuModule from '@/components/scarlett/MenuModule';
-import MenuCarousel from '@/components/scarlett/MenuCarousel';
 import WineCellarSection from '@/components/scarlett/WineCellarSection';
-import { getCloudinaryUrl, ImageMap } from '@/lib/cloudinary';
 
 export default function DrinkPage() {
-  const drinkImages = ImageMap.drink.map((id) => ({ src: getCloudinaryUrl(id, { width: 1200 }) }));
-
   const classicCocktails = [
     ['Red Wine Sangria', '', "Jacob's Creek, Cranberry Juice, Fresh Fruit"],
     ['White Wine Sangria', '', 'Jacob\'s Creek, Apple Juice, Orange Juice, Fresh Fruit'],
@@ -252,8 +248,6 @@ export default function DrinkPage() {
         items={spirits}
       />
 
-      <MenuCarousel images={[drinkImages[0]]} align="left" />
-
       <WineCellarSection />
 
       <MenuModule
@@ -263,8 +257,6 @@ export default function DrinkPage() {
         items={hydrationBar}
         footnote="Hydration Bar & Cold Press Juices priced Bottle / Shot."
       />
-
-      <MenuCarousel images={[drinkImages[1], drinkImages[2]]} align="right" />
 
       <MenuModule
         title="Coffee, Tea & Matcha"

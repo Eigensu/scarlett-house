@@ -78,10 +78,8 @@ export default function IntroSection() {
           ))}
         </div>
 
-        <div className="font-serif text-[15px] leading-[20px] md:text-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto flex flex-col gap-[15px]">
+        <div className="font-serif text-[15px] leading-[20px] md:text-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto">
           <p>Welcome to a space where comfort, conversation, and good company come together.</p>
-
-          <p>Our brand language is rooted in comfort, community, and storytelling while maintaining a sense of understated luxury. It balances old-world charm with contemporary taste, making guests feel as though they're stepping into a home rather than just another restaurant.</p>
         </div>
       </div>
 

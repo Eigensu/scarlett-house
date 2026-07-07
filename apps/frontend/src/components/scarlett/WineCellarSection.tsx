@@ -121,18 +121,11 @@ export default function WineCellarSection() {
 
               {category.wines
                 .filter((wine) => wine[location])
-                .map((wine) => {
-                  const pricing = wine[location]!;
-                  return (
-                    <div key={wine.name} className="w-full flex justify-between gap-x-4 mb-3">
-                      <div className="break-words">{wine.name}</div>
-                      <div className="text-right shrink-0 ml-4 whitespace-nowrap text-[16px]">
-                        {pricing.glass && <span>{pricing.glass} (Glass) / </span>}
-                        <span>{pricing.bottle} (Bottle)</span>
-                      </div>
-                    </div>
-                  );
-                })}
+                .map((wine) => (
+                  <div key={wine.name} className="w-full mb-3">
+                    <div className="break-words">{wine.name}</div>
+                  </div>
+                ))}
             </div>
           ))}
         </div>

@@ -28,17 +28,14 @@ export default function StorySection() {
 
       <div className="w-full flex flex-col items-center justify-center gap-6 z-10 relative px-4 pt-[80px] md:pt-[110px]">
         <div className="font-serif text-[20px] leading-[28px] text-[#FDF0D5] w-full max-w-[720px] text-left drop-shadow-md flex flex-col gap-4 mx-auto">
-          <p>
-            Scarlett House is a hospitality concept brought to life by Malaika Arora, Dhaval Udeshi, Malaya Nagpal, and Arhaan Khan.
+          <p className="italic">
+            Warm, nostalgic, and effortlessly sophisticated.
           </p>
           <p>
-            Built around the idea of nostalgia, comfort, and connection, Scarlett House reimagines dining as an experience that feels warm, familiar, and deeply personal.
+            Scarlett House is a neighbourhood home for soulful food, thoughtful drinks, and meaningful conversation. Rooted in comfort, community, and storytelling, it blends old-world charm with contemporary taste to create an experience that feels personal, welcoming, and timeless.
           </p>
           <p>
-            While each location offers its own unique personality, both Scarlett House Bandra and Scarlett House Juhu are united by a common philosophy: creating memorable spaces where guests can gather, celebrate, and experience the comfort of nostalgia through food, design, and community.
-          </p>
-          <p>
-            More than a restaurant, Scarlett House is a home away from home—where every meal is accompanied by a story, every space sparks a memory, and every visit leaves guests wanting to return.
+            More than a restaurant, Scarlett House is where comfort, community, and conversation come together.
           </p>
         </div>
       </div>

@@ -64,12 +64,15 @@ export default function Navbar() {
   const hideHeader = isHomePage && heroVisible && !isOverlayOpen;
   const showBackLink = !isHomePage;
   const backHref = pathname === '/experiences/set-menu' ? '/experiences' : '/';
+  // Drink page's background (#851F27) is nearly identical to the header's red — use near-black there for contrast
+  const isDrinkPage = pathname === '/drink';
+  const headerTextColor = isDrinkPage ? 'text-[#080F0F]' : 'text-[#841F27]';
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ${
-          isOverlayOpen ? 'mix-blend-normal' : 'mix-blend-difference'
+          isOverlayOpen || !isHomePage ? 'mix-blend-normal' : 'mix-blend-difference'
         } ${
           scrolled ? 'py-4' : 'bg-transparent py-6'
         } ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
@@ -80,7 +83,7 @@ export default function Navbar() {
             {showBackLink && (
               <Link
                 href={backHref}
-                className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
+                className={`flex items-center gap-2 ${headerTextColor} hover:opacity-70 transition-opacity`}
                 aria-label="Back"
               >
                 <ArrowLeft size={18} />
@@ -92,7 +95,7 @@ export default function Navbar() {
           {/* Center: Scarlett House Logo */}
           <div className="absolute left-1/2 -translate-x-1/2 z-0 w-full text-center pointer-events-none">
             <Link href="/" className="inline-block pointer-events-auto hover:opacity-80 transition-opacity">
-              <h1 className="font-serif text-[30px] md:text-[60px] text-[#841F27] tracking-tight leading-none whitespace-nowrap">
+              <h1 className={`font-serif text-[30px] md:text-[60px] ${headerTextColor} tracking-tight leading-none whitespace-nowrap`}>
                 Scarlett House
               </h1>
             </Link>
@@ -102,7 +105,7 @@ export default function Navbar() {
           <div className="flex justify-end relative z-10 min-w-[24px]">
             <button
               onClick={() => setIsOverlayOpen(true)}
-              className="flex items-center gap-2 text-[#841F27] hover:opacity-70 transition-opacity"
+              className={`flex items-center gap-2 ${headerTextColor} hover:opacity-70 transition-opacity`}
               aria-label="Open Menu"
             >
               <span className="font-serif text-[18px] md:text-[20px]">Menu</span>
@@ -144,7 +147,9 @@ export default function Navbar() {
               {[
                 { name: 'Eat at Scarlett House', href: '/eat' },
                 { name: 'Drink at Scarlett House', href: '/drink' },
+                { name: 'Spaces', href: '/spaces' },
                 { name: 'Parties', href: '/parties' },
+                { name: 'Experiences', href: '/experiences' },
               ].map((link, i) => (
                 <motion.div
                   key={link.name}
@@ -161,33 +166,25 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5, ease: 'easeOut' }}
-                className="mt-6 md:mt-10"
-              >
-                <Link
-                  href="/experiences"
-                  onClick={() => setIsOverlayOpen(false)}
-                  className="font-serif text-[50px] md:text-[70px] text-[#080F0F] hover:text-[#841F27] transition-colors leading-[1.2]"
-                >
-                  Experiences
-                </Link>
-              </motion.div>
             </nav>
 
             {/* Bottom Info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex flex-col items-center text-center font-serif text-[20px] md:text-[24px] text-[#080F0F] leading-[1.2] mt-8 pb-4 shrink-0"
+              className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 text-center font-serif text-[16px] md:text-[18px] text-[#080F0F] leading-[1.4] mt-8 pb-4 shrink-0"
             >
-              <p>4pm-10pm, Mon - Thurs</p>
-              <p>Noon - 10pm, Fri - Sun</p>
-              <p>50 Grattan Street, Carlton</p>
+              <div>
+                <p className="uppercase tracking-wide mb-1">Bandra</p>
+                <p>RED Bungalow, 3 Pali Rd, Pali Village, Bandra West, Mumbai 400050</p>
+                <p>Daily, 12pm – Midnight</p>
+              </div>
+              <div>
+                <p className="uppercase tracking-wide mb-1">Juhu</p>
+                <p>Jukarwadi, Juhu Tara, Juhu, Mumbai</p>
+                <p>Daily, 12pm – Midnight</p>
+              </div>
             </motion.div>
           </motion.div>
         )}
