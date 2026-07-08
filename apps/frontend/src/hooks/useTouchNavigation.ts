@@ -26,14 +26,14 @@ export function useTouchNavigation() {
 
   const handleCardClick = useCallback(
     (e: React.MouseEvent<HTMLElement>, cardId: string) => {
-      // Feature detection: Check if device primarily uses touch
-      const isTouch =
-        (typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches) ||
-        (typeof window !== 'undefined' && 'ontouchstart' in window) ||
-        (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);
+      // Feature detection: only intercept the tap on devices that don't truly support hover.
+      // Hybrid laptops (touchscreen + trackpad) can report maxTouchPoints > 0 while still
+      // supporting real :hover, so prefer the hover/pointer media query as the source of truth.
+      const supportsHover =
+        typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-      // If it's a desktop (hover supported, not touch), let the normal link click happen.
-      if (!isTouch) return;
+      // If the device supports real hover, let CSS :hover drive the overlay and let the click navigate normally.
+      if (supportsHover) return;
 
       if (activeCardId !== cardId) {
         // First tap: Set this card as active and prevent navigation

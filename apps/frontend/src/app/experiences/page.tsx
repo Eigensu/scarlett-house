@@ -17,23 +17,41 @@ interface ExperienceSectionProps {
   extraContent?: React.ReactNode;
 }
 
-function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = false, extraContent }: ExperienceSectionProps) {
+function ExperienceSection({ title, description, imageSrc, imageAlt, extraContent }: ExperienceSectionProps) {
   return (
-    <section className="relative w-full py-10 md:py-14 px-6 md:px-12 bg-[#080F0F] overflow-hidden">
-      <div className={`max-w-[1400px] mx-auto flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 md:gap-20 items-center`}>
-        
+    <div className="relative w-full overflow-hidden">
+      <div className="flex flex-col items-center">
+
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="w-full relative aspect-[3/4] overflow-hidden"
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            unoptimized={true}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-[10s] hover:scale-105"
+          />
+        </motion.div>
+
         {/* Text Content */}
-        <motion.div 
-          initial={{ opacity: 0, x: reverse ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10"
+          className="flex flex-col items-center text-center z-10 px-4 py-8 md:px-6"
         >
-          <h2 className="font-serif text-[40px] md:text-[50px] lg:text-[70px] text-[#FDF0D5] leading-tight mb-8 drop-shadow-md">
+          <h2 className="font-serif text-[32px] md:text-[38px] text-[#FDF0D5] leading-tight mb-6 drop-shadow-md">
             {title}
           </h2>
-          <div className="font-serif text-[18px] md:text-[20px] text-[#FDF0D5]/80 flex flex-col gap-6 max-w-[600px] leading-relaxed">
+          <div className="font-serif text-[16px] md:text-[18px] text-[#FDF0D5]/80 flex flex-col gap-4 max-w-[500px] leading-relaxed">
             {description.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -41,26 +59,8 @@ function ExperienceSection({ title, description, imageSrc, imageAlt, reverse = f
           {extraContent}
         </motion.div>
 
-        {/* Image */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-1 w-full relative aspect-[4/3] md:aspect-[3/2] overflow-hidden"
-        >
-          <Image 
-            src={imageSrc} 
-            alt={imageAlt} 
-            fill 
-            unoptimized={true}
-            sizes="(max-width: 768px) 100vw, 50vw" 
-            className="object-cover transition-transform duration-[10s] hover:scale-105" 
-          />
-        </motion.div>
-        
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -99,8 +99,12 @@ export default function ExperiencesPage() {
         </motion.div>
       </section>
 
+      {/* Experiences Grid */}
+      <section className="w-full py-10 md:py-14 px-6 md:px-12 bg-[#080F0F]">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
+
       {/* Experience 1: Set Menu */}
-      <ExperienceSection 
+      <ExperienceSection
         title="Set Menu"
         description={[
           "Our set menu brings together some of Scarlett House’s most-loved dishes in a thoughtfully curated dining experience.",
@@ -200,6 +204,9 @@ export default function ExperiencesPage() {
         imageAlt="Scarlett Brunch"
         reverse={true}
       />
+
+        </div>
+      </section>
 
     </main>
   );

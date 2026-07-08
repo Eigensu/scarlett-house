@@ -49,7 +49,6 @@ function SetMenuCard({ title, price, categories }: SetMenuCardProps) {
 
 export default function SetMenuPage() {
   const heroImage = getCloudinaryUrl(ImageMap.eat[3] || ImageMap.hero[0]);
-  const dividerImage = getCloudinaryUrl(ImageMap.eat[0] || ImageMap.hero[0]);
 
   const vegMenu: Category[] = [
     { name: 'Salads/Soups', chooseAny: 1, items: ['Fig and Burrata Bliss Salad', 'Mango Gazpacho Soup'] },
@@ -96,24 +95,12 @@ export default function SetMenuPage() {
       </section>
 
       {/* Veg, Non-Veg & Drink Menus */}
-      <section className="relative w-full py-24 md:py-32 bg-[#080F0F] flex flex-col items-center px-6">
+      <section className="relative w-full py-24 md:py-32 bg-[#851F27] flex flex-col items-center px-6">
         <div className="w-full max-w-[1300px] flex flex-col md:flex-row gap-16 md:gap-8 justify-between">
           <SetMenuCard title="Veg Set Menu" price="Rs. 850 ++" categories={vegMenu} />
           <SetMenuCard title="Non-Veg Set Menu" price="Rs. 950 ++" categories={nonVegMenu} />
           <SetMenuCard title="Drink" price="(Choose Any 1)" categories={drinkMenu} />
         </div>
-      </section>
-
-      {/* Divider Image */}
-      <section className="w-full h-[40vh] md:h-[60vh] relative">
-        <Image
-          src={dividerImage}
-          alt="Scarlett House Ambience"
-          fill
-          unoptimized={true}
-          sizes="100vw"
-          className="object-cover"
-        />
       </section>
 
     </main>

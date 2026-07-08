@@ -87,7 +87,7 @@ export default function PartiesPage() {
 
 
       {/* Closing Note */}
-      <section className="relative w-full py-32 bg-[#851F27] flex flex-col items-center justify-center text-center px-6">
+      <section className="relative w-full py-32 bg-[#080F0F] flex flex-col items-center justify-center text-center px-6">
         <p className="font-serif text-[24px] md:text-[36px] lg:text-[42px] text-[#FDF0D5] max-w-[800px] leading-relaxed drop-shadow-sm">
           Please contact us for prices, customisation and more details.
         </p>

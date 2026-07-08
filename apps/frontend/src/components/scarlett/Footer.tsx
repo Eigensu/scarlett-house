@@ -8,15 +8,15 @@ export default function Footer() {
     <footer className="relative w-full bg-[#FDF0D5] text-[#080F0F] px-[20px] pt-[20px] pb-[8px] z-50">
       <div className="w-full h-full max-w-[1184px] mx-auto pt-12 pb-2">
         <div className="grid grid-cols-1 lg:grid-cols-7 gap-[20px]">
-          <div className="col-start-1 col-end-6 flex flex-col justify-between">
+          <div className="lg:col-start-1 lg:col-end-6 flex flex-col justify-between">
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity mt-[-10px]">
-              <h2 className="font-serif text-[64px] md:text-[128px] leading-[0.8] tracking-tight text-[#841F27]">
+              <h2 className="font-serif text-[40px] md:text-[128px] leading-[0.9] md:leading-[0.8] tracking-tight text-[#841F27]">
                 SCARLETT HOUSE
               </h2>
             </Link>
           </div>
 
-          <div className="col-start-6 col-end-8 flex flex-col justify-between mt-12 lg:mt-0">
+          <div className="lg:col-start-6 lg:col-end-8 flex flex-col justify-between mt-6 lg:mt-0">
             <p className="font-sans text-[15px] leading-[20px] max-w-sm">
               A space designed for gathering, sharing, and creating memories where comfort, community, and conversation are at the heart of every experience.
             </p>

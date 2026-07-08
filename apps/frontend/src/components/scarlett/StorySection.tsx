@@ -11,7 +11,7 @@ export default function StorySection() {
     setBgImage(getCloudinaryUrl(getRandomItems(ImageMap.carousel, 1)[0]));
   }, []);
   return (
-    <section className="relative w-full h-[100svh] bg-[#080F0F] flex flex-col justify-center items-center overflow-hidden z-20 px-6">
+    <section className="relative w-full h-[80svh] md:h-[100svh] bg-[#080F0F] flex flex-col justify-center items-center overflow-hidden z-20 px-6 py-16 md:py-0">
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image 
           src={bgImage} 
