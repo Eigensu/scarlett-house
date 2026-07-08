@@ -85,9 +85,8 @@ export default function FeatureSections() {
             <div className="w-full relative">
               {/* TOP SVG (Before Hover) */}
               <svg viewBox="0 0 465 258" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto transition-opacity duration-[400ms] ease-in-out opacity-100 group-hover:opacity-0 relative z-10">
-                <path d="M400.29 52.6593L102.682 46.2318C94.7645 74.4535 68.5497 94.8667 37.8901 94.2045L35.6235 199.154C66.2831 199.816 91.5921 221.342 98.2835 249.879L395.892 256.307C403.809 228.085 430.024 207.672 460.684 208.334L462.95 103.385C432.291 102.723 406.982 81.1965 400.29 52.6593Z" fill="#080F0F" />
                 <path d="M360.538 4.44643L63.5854 25.2114C58.2773 54.038 34.0353 76.7589 3.44322 78.8981L10.7658 183.616C41.3578 181.477 68.5261 200.603 77.7944 228.41L374.747 207.645C380.055 178.818 404.297 156.097 434.889 153.958L427.567 49.2405C396.975 51.3797 369.807 32.2537 360.538 4.44643Z" fill="#841F27" />
-                <text x="219" y="116" dominantBaseline="middle" textAnchor="middle" transform="rotate(-4 219 116)" className="font-serif text-[55px] fill-[#FDF0D5]">Experiences</text>
+                <path d="M400.29 52.6593L102.682 46.2318C94.7645 74.4535 68.5497 94.8667 37.8901 94.2045L35.6235 199.154C66.2831 199.816 91.5921 221.342 98.2835 249.879L395.892 256.307C403.809 228.085 430.024 207.672 460.684 208.334L462.95 103.385C432.291 102.723 406.982 81.1965 400.29 52.6593Z" fill="#080F0F" />
               </svg>
 
               {/* BOTTOM SVG (After Hover) */}

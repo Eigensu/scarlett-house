@@ -39,6 +39,11 @@ export const EXP_DELIVERIES = "scarlett-house/experiences/oldetf9yrpgck5mqnbm6";
 export const EXP_ATTIC = "scarlett-house/ambience/nipbu1ajseszrzzzqpaw";
 export const EXP_BRUNCH = "scarlett-house/experiences/sf8d5e7jyomwjzuuhi1w";
 
+export const EAT_AT_SCARLETT = "scarlett-house/eat-drink/q2m1bj8i9liegitp7hdp";
+export const VIEW_FOOD_MENU = "scarlett-house/eat-drink/rdeigxbau6rad1zveyh9";
+export const DRINK_AT_SCARLETT = "scarlett-house/eat-drink/f72h6ghycbgsw4gandnw";
+export const VIEW_DRINK_MENU = "scarlett-house/eat-drink/nskjkdfy6vlfzqta9x6z";
+
 export const AMBIENCE = [
   "scarlett-house/ambience/RMS03674",
   "scarlett-house/ambience/RMS03694",
