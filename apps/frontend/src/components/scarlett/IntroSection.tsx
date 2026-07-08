@@ -59,9 +59,9 @@ export default function IntroSection() {
         </div>
       </div>
 
-      <div className="w-[700px] max-w-[80vw] flex flex-col items-center justify-center gap-[25px] z-10 relative px-4 md:px-0 mt-[80px]">
+      <div className="w-[700px] max-w-[90vw] md:max-w-[80vw] flex flex-col items-center justify-center gap-[15px] md:gap-[25px] z-10 relative px-4 md:px-0 mt-[40px] md:mt-[80px]">
         {/* Center Image Carousel - cinematic aspect ratio */}
-        <div className="relative w-full aspect-[2.25/1]">
+        <div className="relative w-full aspect-[4/3] md:aspect-[2.25/1]">
           {images.map((src, idx) => (
             <Image
               key={src}
