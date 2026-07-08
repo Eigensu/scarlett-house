@@ -23,11 +23,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between items-center gap-4 mt-10 font-sans text-[15px] leading-[15px] whitespace-nowrap">
-          <span className="text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-10 font-sans text-[15px] leading-[15px] md:whitespace-nowrap text-center md:text-left">
+          <span>
             © Scarlett House 2026 | All rights reserved.
           </span>
-          <span className="text-right">
+          <span>
             Powered by @Eigensu
           </span>
         </div>
