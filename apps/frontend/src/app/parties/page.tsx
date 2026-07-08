@@ -45,7 +45,7 @@ export default function PartiesPage() {
       </section>
 
       {/* Sample Package Menu */}
-      <section className="relative w-full py-24 md:py-32 bg-[#080F0F] flex flex-col items-center px-6">
+      <section className="relative w-full py-24 md:py-32 bg-[#851F27] flex flex-col items-center px-6">
         <h2 className="font-serif text-[40px] md:text-[60px] text-[#FDF0D5] mb-20 text-center drop-shadow-md">
           Sample Package Menu
         </h2>

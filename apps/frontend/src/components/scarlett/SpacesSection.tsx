@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ImageMap, getCloudinaryUrl } from '@/lib/cloudinary';
+import { ImageMap, getCloudinaryUrl, NEW_AMBIENCE_CAROUSEL } from '@/lib/cloudinary';
 
 export default function LocationsSection() {
-  const bandraBg = getCloudinaryUrl(ImageMap.locations.bandra);
+  const bandraBg = getCloudinaryUrl(NEW_AMBIENCE_CAROUSEL);
   const juhuBg = getCloudinaryUrl(ImageMap.locations.juhu);
 
   return (

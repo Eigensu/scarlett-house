@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/scarlett/Footer';
 import Navbar from '@/components/scarlett/Navbar';
-import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU, AMBIENCE } from '@/lib/cloudinary';
+import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU, EXP_WINE_CHEESE, EXP_BUGGIE, EXP_DELIVERIES, EXP_ATTIC, EXP_BRUNCH, AMBIENCE } from '@/lib/cloudinary';
 
 interface ExperienceSectionProps {
   title: string;
@@ -125,7 +125,7 @@ export default function ExperiencesPage() {
           "A thoughtfully paired selection of wines and artisanal cheeses, designed for slow evenings and great conversation.",
           "Discover new favourites while savouring a timeless combination in true Scarlett House style."
         ]}
-        imageSrc={getCloudinaryUrl(ImageMap.eat[1] || ImageMap.hero[0])}
+        imageSrc={getCloudinaryUrl(EXP_WINE_CHEESE)}
         imageAlt="Wine and Cheese"
         reverse={true}
       />
@@ -138,7 +138,7 @@ export default function ExperiencesPage() {
           "A thoughtful touch designed to make your journey to and from Scarlett House Bandra as comfortable as your time with us."
         ]}
         /* TODO: Replace with official buggy photograph when available */
-        imageSrc={getCloudinaryUrl(ImageMap.carousel[1])}
+        imageSrc={getCloudinaryUrl(EXP_BUGGIE)}
         imageAlt="Scarlett House Buggie"
       />
 
@@ -149,7 +149,7 @@ export default function ExperiencesPage() {
           "Enjoy the warmth and flavours of Scarlett House from the comfort of your home.",
           "Our Juhu delivery menu brings your favourite dishes straight from our house to yours."
         ]}
-        imageSrc={getCloudinaryUrl(AMBIENCE[6])}
+        imageSrc={getCloudinaryUrl(EXP_DELIVERIES)}
         imageAlt="Home Deliveries"
         reverse={true}
       />
@@ -172,7 +172,7 @@ export default function ExperiencesPage() {
           "Tucked away from the bustle of the city, The Glass House is a serene space designed for slow mornings and unhurried afternoons.",
           "Settle in with a cup of coffee, a perfectly whisked matcha, and a moment to simply relax."
         ]}
-        imageSrc={getCloudinaryUrl(ImageMap.locations.juhu)}
+        imageSrc={getCloudinaryUrl(AMBIENCE[5])}
         imageAlt="The Glass House Juhu"
         reverse={true}
       />
@@ -184,7 +184,7 @@ export default function ExperiencesPage() {
           "A cosy hideaway above the city, The Attic is made for intimate gatherings, thoughtful cocktails, and conversations that linger long after the last sip.",
           "Warm, inviting, and effortlessly comfortable, it’s a space to settle in and stay awhile."
         ]}
-        imageSrc={getCloudinaryUrl(ImageMap.hero[2])}
+        imageSrc={getCloudinaryUrl(EXP_ATTIC)}
         imageAlt="The Attic Bandra"
       />
 
@@ -196,7 +196,7 @@ export default function ExperiencesPage() {
           "With live music, interactive food stations, and our signature electrolyte gola bar, it’s a celebration of good food, great company, and unhurried afternoons.",
           "Available at both our Bandra and Juhu locations."
         ]}
-        imageSrc={getCloudinaryUrl(ImageMap.eat[2] || ImageMap.carousel[7])}
+        imageSrc={getCloudinaryUrl(EXP_BRUNCH)}
         imageAlt="Scarlett Brunch"
         reverse={true}
       />
