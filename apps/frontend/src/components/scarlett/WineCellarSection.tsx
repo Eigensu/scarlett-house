@@ -87,18 +87,18 @@ export default function WineCellarSection() {
   return (
     <section className="w-full px-5 py-[30px]">
       <div className="w-full max-w-[800px] flex flex-col mr-auto">
-        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-[30px]">
-          <h2 className="text-[60px] leading-[60px] uppercase font-serif tracking-normal text-[#FDF0D5]">
+        <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between flex-wrap gap-4 mb-[30px]">
+          <h2 className="text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-[#FDF0D5]">
             Wine Cellar
           </h2>
 
-          <div className="flex gap-2 font-serif text-[16px]">
+          <div className="flex gap-2 font-serif text-[14px] md:text-[16px]">
             {(['juhu', 'bandra'] as Location[]).map((loc) => (
               <button
                 key={loc}
                 onClick={() => setLocation(loc)}
                 className={clsx(
-                  'px-4 py-1.5 uppercase tracking-wide border transition-colors',
+                  'px-3 md:px-4 py-1 md:py-1.5 uppercase tracking-wide border transition-colors',
                   location === loc
                     ? 'bg-[#FDF0D5] text-[#080F0F] border-[#FDF0D5]'
                     : 'border-[#FDF0D5] text-[#FDF0D5] opacity-70 hover:opacity-100'
@@ -110,7 +110,7 @@ export default function WineCellarSection() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col font-serif text-[20px] text-[#FDF0D5] tracking-normal leading-[30px]">
+        <div className="w-full flex flex-col font-serif text-[16px] md:text-[20px] text-[#FDF0D5] tracking-normal leading-[24px] md:leading-[30px]">
           {categories
             .filter((category) => category.wines.some((wine) => wine[location]))
             .map((category) => (
