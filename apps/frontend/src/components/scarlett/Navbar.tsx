@@ -78,8 +78,8 @@ export default function Navbar() {
         } ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
       >
         <div className="w-full px-6 md:px-12 flex items-center justify-between relative">
-          {/* Left: Back (non-home pages only) */}
-          <div className="flex justify-start relative z-10 min-w-[24px]">
+          {/* Back (non-home pages only) — right on mobile, left on desktop */}
+          <div className="flex order-2 md:order-1 justify-end md:justify-start relative z-10 min-w-[24px]">
             {showBackLink && (
               <Link
                 href={backHref}
@@ -101,8 +101,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Right: Menu (always visible) */}
-          <div className="flex justify-end relative z-10 min-w-[24px]">
+          {/* Menu (always visible) — left on mobile, right on desktop */}
+          <div className="flex order-1 md:order-2 justify-start md:justify-end relative z-10 min-w-[24px]">
             <button
               onClick={() => setIsOverlayOpen(true)}
               className={`flex items-center gap-2 ${headerTextColor} hover:opacity-70 transition-opacity`}
