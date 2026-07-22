@@ -4,6 +4,7 @@ import './globals.css';
 import ScrollObserver from '@/components/ScrollObserver';
 import Navbar from '@/components/scarlett/Navbar';
 import Footer from '@/components/scarlett/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 const instrumentSerif = Instrument_Serif({
   variable: '--font-serif',
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
