@@ -1,19 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Navbar from '@/components/scarlett/Navbar';
 import Footer from '@/components/scarlett/Footer';
 import { ImageMap, getCloudinaryUrl } from '@/lib/cloudinary';
-import Navbar from '@/components/scarlett/Navbar';
 
 export default function PartiesPage() {
   const heroImage = getCloudinaryUrl(ImageMap.parties[0] || ImageMap.hero[0]);
-  const packageImage = getCloudinaryUrl(ImageMap.carousel[2]);
 
   return (
     <main className="w-full bg-[#080F0F] relative z-10 min-h-screen font-sans">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section - Private Parties */}
       <section className="relative w-full h-[100svh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
@@ -35,64 +34,48 @@ export default function PartiesPage() {
           <h1 className="font-serif text-[60px] md:text-[90px] lg:text-[120px] text-[#FDF0D5] leading-none drop-shadow-xl">
             Private Parties
           </h1>
-          <a
-            href="tel:9768583376"
-            className="mt-8 inline-block font-serif text-[16px] md:text-[18px] text-[#FDF0D5] border border-[#FDF0D5]/60 px-8 py-3 tracking-widest uppercase hover:bg-[#FDF0D5] hover:text-[#080F0F] transition-colors"
-          >
-            Call Us: 9768583376
-          </a>
+          <div className="mt-8 flex flex-col items-center">
+            <p className="font-serif text-[#FDF0D5] mb-2 uppercase tracking-widest">Call us at:</p>
+            <a
+              href="tel:9870306675"
+              className="inline-block font-serif text-[16px] md:text-[18px] text-[#FDF0D5] border border-[#FDF0D5]/60 px-8 py-3 tracking-widest uppercase hover:bg-[#FDF0D5] hover:text-[#080F0F] transition-colors"
+            >
+              9870306675 / 9819098092
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Sample Package Menu */}
+      {/* Private Events Section */}
       <section className="relative w-full py-24 md:py-32 bg-[#851F27] flex flex-col items-center px-6">
-        <h2 className="font-serif text-[40px] md:text-[60px] text-[#FDF0D5] mb-20 text-center drop-shadow-md">
-          Sample Package Menu
-        </h2>
-
-        <div className="w-full max-w-[1000px] flex flex-col md:flex-row gap-16 md:gap-8 justify-between">
+        <div className="max-w-[900px] flex flex-col items-center text-center">
+          <h2 className="font-serif text-[40px] md:text-[60px] text-[#FDF0D5] mb-12 drop-shadow-md">
+            Private Events
+          </h2>
           
-          {/* Unlimited Food */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <h3 className="font-serif text-[28px] md:text-[36px] text-[#FDF0D5] mb-8 border-b border-[#FDF0D5]/30 pb-4 inline-block">
-              Unlimited Food
-            </h3>
-            <ul className="flex flex-col gap-6 font-serif text-[18px] md:text-[22px] text-[#FDF0D5]/80">
-              <li>• 4 Small Plates</li>
-              <li>• 3 Large Plates</li>
-              <li>• 1 Dessert</li>
-            </ul>
+          <div className="space-y-6 text-[#FDF0D5]/90 text-[16px] md:text-[20px] leading-relaxed font-sans max-w-[800px]">
+            <p>
+              Every celebration has a story. At Scarlett House, we’ve created spaces that bring people together over thoughtful food, heartfelt hospitality, and memorable experiences.
+            </p>
+            <p>
+              Whether you’re planning an intimate gathering, a milestone celebration, a corporate event, or an evening with friends, our versatile spaces provide the perfect setting for every occasion.
+            </p>
+            <p>
+              From cosy private rooms to vibrant communal spaces, each venue can be tailored to suit your event. Paired with curated menus, handcrafted cocktails, and bespoke experiences, we make every gathering feel personal, effortless, and unforgettable.
+            </p>
           </div>
-
-          {/* Unlimited Alcohol */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <h3 className="font-serif text-[28px] md:text-[36px] text-[#FDF0D5] mb-8 border-b border-[#FDF0D5]/30 pb-4 inline-block">
-              Unlimited Alcohol
-            </h3>
-            <ul className="flex flex-col gap-5 font-serif text-[18px] md:text-[22px] text-[#FDF0D5]/80">
-              <li>• Mocktails</li>
-              <li>• Cocktails</li>
-              <li>• Beer</li>
-              <li>• Wine</li>
-              <li>• Vodka</li>
-              <li>• Whiskey</li>
-              <li>• Gin</li>
-              <li>• Rum</li>
-              <li>• Soft Beverages</li>
-            </ul>
-          </div>
-
         </div>
       </section>
 
-
-      {/* Closing Note */}
-      <section className="relative w-full py-32 bg-[#851F27] flex flex-col items-center justify-center text-center px-6">
-        <p className="font-serif text-[24px] md:text-[36px] lg:text-[42px] text-[#FDF0D5] max-w-[800px] leading-relaxed drop-shadow-sm">
-          Please contact us for prices, customisation and more details.
-        </p>
+      {/* Check Out Our Spaces Section */}
+      <section className="relative w-full py-24 bg-[#080F0F] flex flex-col items-center justify-center text-center px-6">
+        <Link
+          href="/parties/spaces"
+          className="inline-block font-serif text-[18px] md:text-[20px] text-[#080F0F] bg-[#FDF0D5] px-10 py-4 tracking-widest uppercase hover:bg-transparent hover:text-[#FDF0D5] border border-[#FDF0D5] transition-colors"
+        >
+          Check out our spaces
+        </Link>
       </section>
-
 
     </main>
   );
