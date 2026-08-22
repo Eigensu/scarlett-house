@@ -24,7 +24,7 @@ export default function SplitMenuSection() {
   }, []);
 
   return (
-    <section className="w-full min-h-screen h-[100svh] bg-[#080F0F] grid grid-cols-1 md:grid-cols-2 z-30 relative overflow-hidden">
+    <section className="w-full h-[140svh] md:h-[100svh] bg-[#080F0F] grid grid-cols-1 md:grid-cols-2 z-30 relative overflow-hidden">
       
       {/* Left Side: Eat */}
       <Link 
@@ -61,7 +61,7 @@ export default function SplitMenuSection() {
 
         {/* Large S */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-600 ease-in-out group-hover:opacity-100 group-[.is-active]:opacity-100 pointer-events-none">
-          <span className="font-serif text-[#851F27] text-[120svh] leading-[105svh] opacity-80 mix-blend-multiply">S</span>
+          <span className="font-serif text-[#851F27] text-[45svh] md:text-[120svh] leading-[40svh] md:leading-[105svh] opacity-80 mix-blend-multiply">S</span>
         </div>
 
         {/* Text */}
@@ -104,7 +104,7 @@ export default function SplitMenuSection() {
 
         {/* Large S */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-600 ease-in-out group-hover:opacity-100 group-[.is-active]:opacity-100 pointer-events-none">
-          <span className="font-serif text-[#851F27] text-[120svh] leading-[105svh] opacity-80 mix-blend-multiply">S</span>
+          <span className="font-serif text-[#851F27] text-[45svh] md:text-[120svh] leading-[40svh] md:leading-[105svh] opacity-80 mix-blend-multiply">S</span>
         </div>
 
         {/* Text */}

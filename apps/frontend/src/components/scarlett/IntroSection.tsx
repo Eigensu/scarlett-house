@@ -37,7 +37,7 @@ export default function IntroSection() {
   }, [images]);
 
   return (
-    <section className="relative w-full min-h-[100svh] bg-[#851F27] flex flex-col justify-center items-center z-20 py-[8vh]">
+    <section className="relative w-full h-[80svh] md:min-h-[100svh] bg-[#851F27] flex flex-col justify-center items-center z-20 py-10 md:py-[8vh]">
       
       {/* Diagonal Scrolling Banner (Behind Content) */}
       <div className="absolute top-[48%] left-1/2 w-[200vw] h-[35px] bg-[#080F0F] -translate-x-1/2 -translate-y-1/2 -rotate-[8deg] z-0 flex items-center overflow-hidden">
@@ -59,7 +59,7 @@ export default function IntroSection() {
         </div>
       </div>
 
-      <div className="w-[700px] max-w-[90vw] md:max-w-[80vw] flex flex-col items-center justify-center gap-[15px] md:gap-[25px] z-10 relative px-4 md:px-0 mt-[40px] md:mt-[80px]">
+      <div className="w-[875px] max-w-[75vw] md:max-w-[85vw] flex flex-col items-center justify-center gap-[15px] md:gap-[25px] z-10 relative px-4 md:px-0 mt-[40px] md:mt-[80px]">
         {/* Center Image Carousel - cinematic aspect ratio */}
         <div className="relative w-full aspect-[4/3] md:aspect-[2.25/1]">
           {images.map((src, idx) => (
@@ -69,7 +69,7 @@ export default function IntroSection() {
               alt="Scarlett House Atmosphere"
               fill
               unoptimized={true}
-              sizes="(max-width: 768px) 100vw, 780px"
+              sizes="(max-width: 768px) 100vw, 875px"
               priority={idx === 0}
               className={`object-cover transition-opacity duration-1000 absolute inset-0 ${
                 idx === imgIndex ? 'opacity-100' : 'opacity-0'
@@ -78,7 +78,7 @@ export default function IntroSection() {
           ))}
         </div>
 
-        <div className="font-serif text-[15px] leading-[20px] md:text-[20px] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto">
+        <div className="font-serif text-[24px] leading-[32px] md:text-[20px] md:leading-[normal] text-[#FDF0D5] text-center w-full max-w-[640px] mx-auto">
           <p>Welcome to a space where comfort, conversation, and good company come together.</p>
         </div>
       </div>

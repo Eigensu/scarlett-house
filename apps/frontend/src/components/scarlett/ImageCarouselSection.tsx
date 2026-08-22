@@ -36,7 +36,7 @@ export default function ImageCarouselSection() {
   };
 
   return (
-    <section className="relative w-full h-[100svh] min-h-[100svh] bg-[#080F0F] z-20 overflow-hidden flex-shrink-0">
+    <section className="relative w-full h-[80svh] md:h-[100svh] md:min-h-[100svh] bg-[#080F0F] z-20 overflow-hidden flex-shrink-0">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}

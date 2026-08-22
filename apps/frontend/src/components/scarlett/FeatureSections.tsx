@@ -14,7 +14,7 @@ export default function FeatureSections() {
     <>
       {/* Parties Section */}
       {/* Parties Section */}
-      <section className="snap-start flex-shrink-0 relative w-full h-[100svh] bg-[#080F0F] flex items-center justify-center z-20">
+      <section className="snap-start flex-shrink-0 relative w-full h-[80svh] md:h-[100svh] py-16 md:py-0 bg-[#080F0F] flex items-center justify-center z-20">
         <div className="w-full max-w-[1200px] px-4">
           <Link 
             href="/parties" 
@@ -77,7 +77,7 @@ export default function FeatureSections() {
       </section>
 
       {/* Experiences Section */}
-      <section className="snap-start flex-shrink-0 relative w-full h-[100svh] flex items-center justify-center overflow-hidden z-20">
+      <section className="snap-start flex-shrink-0 relative w-full h-[80svh] md:h-[100svh] flex items-center justify-center overflow-hidden z-20">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image 
             src={getCloudinaryUrl(ImageMap.experiences[0])}
