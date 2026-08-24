@@ -14,7 +14,7 @@ export default function SpacesPage() {
       capacity: 'Upto 20 Guests',
       description: 'The Living Room is where comfort meets celebration. Designed to feel warm, inviting, and effortlessly elegant, it’s an ideal space for birthdays, intimate celebrations, corporate dinners, cocktail evenings, and special occasions.\n\nWith flexible seating and a welcoming atmosphere, it brings people together over exceptional food, signature drinks, and meaningful conversations.\n\n*Valet parking available',
       contact: '+91 74000 99990',
-      image: '/F285B01C-9302-45D8-A31B-1718E8029B1B.PNG'
+      image: 'apps/frontend/src/public/thelivingroom.webp'
     },
     {
       id: 'attic',
@@ -161,7 +161,6 @@ export default function SpacesPage() {
               {/* Bandra Image */}
               <div 
                 className="w-1/2 h-full relative group overflow-hidden"
-                style={{ clipPath: 'polygon(0 8%, 100% 0, 100% 100%, 0 100%)' }}
                 style={{ clipPath: 'polygon(0 16%, 100% 0%, 100% 100%, 0 100%)' }}
               >
                 <Image 
@@ -181,7 +180,6 @@ export default function SpacesPage() {
               {/* Juhu Image (RMS03737) */}
               <div 
                 className="w-1/2 h-full relative group overflow-hidden"
-                style={{ clipPath: 'polygon(0 8%, 100% 0, 100% 100%, 0 100%)' }}
                 style={{ clipPath: 'polygon(0 0%, 100% 16%, 100% 100%, 0 100%)' }}
               >
                 <Image 
@@ -203,6 +201,7 @@ export default function SpacesPage() {
         </div>
       </section>
 
+      <Footer />
     </main>
   );
 }
