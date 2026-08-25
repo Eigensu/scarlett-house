@@ -64,9 +64,10 @@ export default function Navbar() {
   const hideHeader = isHomePage && heroVisible && !isOverlayOpen;
   const showBackLink = !isHomePage;
   const backHref = pathname === '/experiences/set-menu' ? '/experiences' : '/';
-  // Drink page's background (#851F27) is nearly identical to the header's red — use near-black there for contrast
-  const isDrinkPage = pathname === '/drink';
-  const headerTextColor = isDrinkPage ? 'text-[#080F0F]' : 'text-[#841F27]';
+  // These pages have a section background (#851F27) nearly identical to the header's default red — use near-black there for contrast
+  const REDBG_PAGES = ['/drink', '/parties', '/parties/spaces'];
+  const needsDarkHeaderText = REDBG_PAGES.includes(pathname);
+  const headerTextColor = needsDarkHeaderText ? 'text-[#080F0F]' : 'text-[#841F27]';
 
   return (
     <>
