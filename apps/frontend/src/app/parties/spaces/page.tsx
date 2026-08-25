@@ -14,7 +14,7 @@ export default function SpacesPage() {
       capacity: 'Upto 20 Guests',
       description: 'The Living Room is where comfort meets celebration. Designed to feel warm, inviting, and effortlessly elegant, it’s an ideal space for birthdays, intimate celebrations, corporate dinners, cocktail evenings, and special occasions.\n\nWith flexible seating and a welcoming atmosphere, it brings people together over exceptional food, signature drinks, and meaningful conversations.\n\n*Valet parking available',
       contact: '+91 74000 99990',
-      image: 'apps/frontend/src/public/thelivingroom.webp'
+      image: '/F285B01C-9302-45D8-A31B-1718E8029B1B.PNG'
     },
     {
       id: 'attic',
