@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { Users } from 'lucide-react';
 import Navbar from '@/components/scarlett/Navbar';
-import Footer from '@/components/scarlett/Footer';
 import { getCloudinaryUrl, AMBIENCE, EXP_ATTIC } from '@/lib/cloudinary';
 
 export default function SpacesPage() {
@@ -200,8 +199,6 @@ export default function SpacesPage() {
 
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

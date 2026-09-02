@@ -21,7 +21,7 @@ export default function Footer() {
               A space designed for gathering, sharing, and creating memories where comfort, community, and conversation are at the heart of every experience.
             </p>
 
-            <div className="mt-2 font-sans text-[12px] leading-[18px] flex flex-row gap-6 justify-center lg:justify-start">
+            <div className="mt-2 lg:pl-8 font-sans text-[12px] leading-[18px] flex flex-row gap-6 justify-center lg:justify-start">
               <div>
                 <p className="uppercase tracking-[0.08em] opacity-60">Bandra</p>
                 <a href="tel:+917400099990" className="hover:opacity-70 transition-opacity">
@@ -38,10 +38,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6 font-sans text-[15px] leading-[15px] md:whitespace-nowrap text-center md:text-left">
-          <span>
-            © Scarlett House 2026 | All rights reserved.
-          </span>
+        <p className="mt-6 font-sans text-[12px] leading-[18px] opacity-70 text-center lg:text-right">
+          *Valet parking available
+        </p>
+
+        <div className="flex justify-center items-center mt-2 font-sans text-[15px] leading-[15px] text-center">
           <span>
             © Scarlett House 2026 | All rights reserved | Powered by @Eigensu
           </span>
