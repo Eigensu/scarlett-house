@@ -43,7 +43,7 @@ export default function Footer() {
             © Scarlett House 2026 | All rights reserved.
           </span>
           <span>
-            Powered by @Eigensu
+            © Scarlett House 2026 | All rights reserved | Powered by @Eigensu
           </span>
         </div>
       </div>
