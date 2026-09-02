@@ -11,7 +11,7 @@ export default function SpacesPage() {
       title: 'The Living Room',
       location: 'Bandra',
       capacity: 'Upto 20 Guests',
-      description: 'The Living Room is where comfort meets celebration. Designed to feel warm, inviting, and effortlessly elegant, it’s an ideal space for birthdays, intimate celebrations, corporate dinners, cocktail evenings, and special occasions. With flexible seating and a welcoming atmosphere, it brings people together over exceptional food, signature drinks, and meaningful conversations. *Valet parking available',
+      description: 'The Living Room is where comfort meets celebration. Designed to feel warm, inviting, and effortlessly elegant, it’s an ideal space for birthdays, intimate celebrations, corporate dinners, cocktail evenings, and special occasions. With flexible seating and a welcoming atmosphere, it brings people together over exceptional food, signature drinks, and meaningful conversations.',
       contact: '+91 74000 99990',
       image: getCloudinaryUrl(AMBIENCE[0] || '')
     },
@@ -20,7 +20,7 @@ export default function SpacesPage() {
       title: 'The Attic',
       location: 'Bandra',
       capacity: '50 - 70 Guests',
-      description: 'A warm and versatile private event space, The Attic is ideal for celebrations, corporate gatherings, and special occasions. Fully air-conditioned and complete with a dedicated bar, it comfortably accommodates everything from cocktail evenings and seated dinners to bespoke private events. With curated menus, attentive service, and Scarlett House’s signature hospitality, every gathering is designed to feel seamless, memorable, and uniquely yours. *Valet parking available',
+      description: 'A warm and versatile private event space, The Attic is ideal for celebrations, corporate gatherings, and special occasions. Fully air-conditioned and complete with a dedicated bar, it comfortably accommodates everything from cocktail evenings and seated dinners to bespoke private events. With curated menus, attentive service, and Scarlett House’s signature hospitality, every gathering is designed to feel seamless, memorable, and uniquely yours.',
       contact: '+91 74000 99990',
       image: getCloudinaryUrl(AMBIENCE[20] || '') // SH_Ambience_AtticBar
     },
@@ -29,7 +29,7 @@ export default function SpacesPage() {
       title: 'The Red Room',
       location: 'Bandra',
       capacity: '12 - 20 Guests',
-      description: 'An intimate private space designed for exclusive celebrations, The Red Room offers a personalised experience centred around conversation and cocktails. Complete with a dedicated private bartender, it is perfect for birthdays, anniversaries, and small gatherings. Thoughtfully curated and highly personal, it’s a space where every occasion feels special. *Valet parking available',
+      description: 'An intimate private space designed for exclusive celebrations, The Red Room offers a personalised experience centred around conversation and cocktails. Complete with a dedicated private bartender, it is perfect for birthdays, anniversaries, and small gatherings. Thoughtfully curated and highly personal, it’s a space where every occasion feels special.',
       contact: '+91 74000 99990',
       image: getCloudinaryUrl(AMBIENCE[23] || '') // SH_Ambience_Redroom_1
     },
@@ -38,7 +38,7 @@ export default function SpacesPage() {
       title: 'The Glass House',
       location: 'Juhu',
       capacity: '20 - 25 Guests',
-      description: 'Bathed in natural light, The Glass House provides a warm and intimate setting for smaller celebrations, daytime gatherings, and special occasions with family and friends. Especially inviting during the monsoon, it’s the perfect space for long lunches, meaningful conversations, and relaxed, memorable moments. *Valet parking available',
+      description: 'Bathed in natural light, The Glass House provides a warm and intimate setting for smaller celebrations, daytime gatherings, and special occasions with family and friends. Especially inviting during the monsoon, it’s the perfect space for long lunches, meaningful conversations, and relaxed, memorable moments.',
       contact: '+91 79000 99997',
       image: getCloudinaryUrl(AMBIENCE[1] || '')
     },
@@ -47,7 +47,7 @@ export default function SpacesPage() {
       title: 'The Community Space',
       location: 'Juhu',
       capacity: '24 - 30 Guests',
-      description: 'Designed to bring people together, The Community Space is ideal for group dining, corporate gatherings, team lunches, anniversaries, and special celebrations. With shared experiences at its heart, the space combines curated menus, attentive service, and Scarlett House hospitality in a relaxed yet elevated setting. *Subject to availability',
+      description: 'Designed to bring people together, The Community Space is ideal for group dining, corporate gatherings, team lunches, anniversaries, and special celebrations. With shared experiences at its heart, the space combines curated menus, attentive service, and Scarlett House hospitality in a relaxed yet elevated setting.',
       contact: '+91 79000 99997',
       image: getCloudinaryUrl(AMBIENCE[2] || '')
     },
