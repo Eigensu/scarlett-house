@@ -223,7 +223,7 @@ export default function DrinkPage() {
 
       <MenuModule
         title="House of Firsts"
-        subtitle="Signature Cocktail Menu"
+        subtitle={"Signature Cocktail Menu\nJuhu & Bandra"}
         note="Remember the time your firsts felt bigger than life itself? At The Scarlett House, those moments now live on through our new cocktail menu that turns memory into mixology."
         align="left"
         layout="layout-desc"
@@ -252,6 +252,7 @@ export default function DrinkPage() {
 
       <MenuModule
         title="Zero Proof"
+        subtitle="Juhu & Bandra"
         align="left"
         layout="layout-desc"
         items={hydrationBar}
@@ -260,6 +261,7 @@ export default function DrinkPage() {
 
       <MenuModule
         title="Coffee, Tea & Matcha"
+        subtitle="Juhu & Bandra"
         align="right"
         layout="layout-desc"
         items={coffeeTeaMatcha}
@@ -267,6 +269,7 @@ export default function DrinkPage() {
 
       <MenuModule
         title="Other Beverages"
+        subtitle="Juhu & Bandra"
         align="left"
         layout="layout-desc"
         items={otherBeverages}

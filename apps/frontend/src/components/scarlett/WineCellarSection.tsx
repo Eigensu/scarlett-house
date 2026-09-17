@@ -85,30 +85,28 @@ export default function WineCellarSection() {
   const [location, setLocation] = useState<Location>('juhu');
 
   return (
-    <section className="w-full px-5 py-[30px]">
-      <div className="w-full max-w-[800px] flex flex-col mr-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between flex-wrap gap-4 mb-[30px]">
-          <h2 className="text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-[#FDF0D5]">
-            Wine Cellar
-          </h2>
+    <section className="w-full px-5 py-[30px] relative">
+      <div className="absolute right-5 top-[30px] flex items-center gap-2 font-serif text-[16px] md:text-[20px] uppercase tracking-wide whitespace-nowrap">
+        {(['bandra', 'juhu'] as Location[]).map((loc, i) => (
+          <React.Fragment key={loc}>
+            {i > 0 && <span className="opacity-50 text-[#FDF0D5]">|</span>}
+            <button
+              onClick={() => setLocation(loc)}
+              className={clsx(
+                'transition-opacity text-[#FDF0D5]',
+                location === loc ? 'opacity-100 underline underline-offset-4' : 'opacity-50 hover:opacity-80'
+              )}
+            >
+              {loc === 'juhu' ? 'Juhu' : 'Bandra'}
+            </button>
+          </React.Fragment>
+        ))}
+      </div>
 
-          <div className="flex gap-2 font-serif text-[14px] md:text-[16px]">
-            {(['juhu', 'bandra'] as Location[]).map((loc) => (
-              <button
-                key={loc}
-                onClick={() => setLocation(loc)}
-                className={clsx(
-                  'px-3 md:px-4 py-1 md:py-1.5 uppercase tracking-wide border transition-colors',
-                  location === loc
-                    ? 'bg-[#FDF0D5] text-[#080F0F] border-[#FDF0D5]'
-                    : 'border-[#FDF0D5] text-[#FDF0D5] opacity-70 hover:opacity-100'
-                )}
-              >
-                {loc === 'juhu' ? 'Juhu' : 'Bandra'}
-              </button>
-            ))}
-          </div>
-        </div>
+      <div className="w-full max-w-[800px] flex flex-col mr-auto">
+        <h2 className="text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-[#FDF0D5] mb-[30px]">
+          Wine Cellar
+        </h2>
 
         <div className="w-full flex flex-col font-serif text-[16px] md:text-[20px] text-[#FDF0D5] tracking-normal leading-[24px] md:leading-[30px]">
           {categories

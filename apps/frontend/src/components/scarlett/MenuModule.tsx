@@ -12,11 +12,17 @@ export interface MenuModuleProps {
   layout: LayoutType;
   items: string[][];
   className?: string;
+  headerAction?: React.ReactNode;
 }
 
-export default function MenuModule({ title, subtitle, note, footnote, align, layout, items, className }: MenuModuleProps) {
+export default function MenuModule({ title, subtitle, note, footnote, align, layout, items, className, headerAction }: MenuModuleProps) {
   return (
-    <section className={clsx("w-full px-5 py-[30px]", className)}>
+    <section className={clsx("w-full px-5 py-[30px] relative", className)}>
+      {headerAction && (
+        <div className="absolute right-5 top-[30px]">
+          {headerAction}
+        </div>
+      )}
       <div
         className={clsx(
           "w-full max-w-[800px] flex flex-col",
@@ -25,11 +31,11 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
       >
         <h2 className="text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-current mb-[30px]">
           {title}
-          {subtitle && (
-            <span className="block text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] italic normal-case tracking-normal mt-1">
-              {subtitle}
+          {subtitle && subtitle.split('\n').map((line, i) => (
+            <span key={i} className="block text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] italic normal-case tracking-normal mt-1">
+              {line}
             </span>
-          )}
+          ))}
         </h2>
 
         {note && (
