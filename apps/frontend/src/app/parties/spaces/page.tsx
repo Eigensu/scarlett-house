@@ -110,7 +110,6 @@ export default function SpacesPage() {
 
                 <div className="flex flex-col gap-3 font-sans text-[15px] uppercase tracking-[0.1em] text-[#FDF0D5]/90 mb-12">
                   <p><span className="text-[#FDF0D5]/50 mr-2">Capacity:</span> {space.capacity}</p>
-                  <p><span className="text-[#FDF0D5]/50 mr-2">Contact:</span> {space.contact}</p>
                 </div>
 
                 <a 

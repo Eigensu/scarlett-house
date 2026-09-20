@@ -103,15 +103,37 @@ export default function ExperiencesPage() {
       <section className="w-full py-10 md:py-14 px-6 md:px-12 bg-[#080F0F]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
 
-      {/* Experience 1: Set Menu */}
+      {/* Experience 1: Scarlett Brunch */}
+      <ExperienceSection
+        title="Scarlett Brunch"
+        description={[
+          "Ease into the weekend with a leisurely brunch designed for slow afternoons and good company.",
+          "With live music, interactive food stations, and our signature electrolyte gola bar, it’s a celebration of good food, great company, and unhurried afternoons.",
+          "Available at both our Bandra and Juhu locations."
+        ]}
+        imageSrc={getCloudinaryUrl(EXP_BRUNCH)}
+        imageAlt="Scarlett Brunch"
+        extraContent={
+          <Link
+            href="/experiences/brunch"
+            className="mt-12 inline-block font-serif text-[16px] md:text-[18px] text-[#FDF0D5] border border-[#FDF0D5]/60 px-8 py-3 tracking-widest uppercase hover:bg-[#FDF0D5] hover:text-[#080F0F] transition-colors"
+          >
+            View Brunch Menu
+          </Link>
+        }
+      />
+
+      {/* Experience 2: Set Menu */}
       <ExperienceSection
         title="Set Menu"
         description={[
           "Our set menu brings together some of Scarlett House’s most-loved dishes in a thoughtfully curated dining experience.",
-          "Gather around the table and experience the best of Scarlett House."
+          "Gather around the table with family and friends, and experience the very best of Scarlett House in one seamless spread.",
+          "Available at both our Bandra and Juhu locations."
         ]}
         imageSrc={getCloudinaryUrl(NEW_EXPERIENCES_SET_MENU)}
         imageAlt="Set Menu"
+        reverse={true}
         extraContent={
           <Link
             href="/experiences/set-menu"
@@ -190,19 +212,6 @@ export default function ExperiencesPage() {
         ]}
         imageSrc={getCloudinaryUrl(EXP_ATTIC)}
         imageAlt="The Attic Bandra"
-      />
-
-      {/* Experience 8: Scarlett Brunch */}
-      <ExperienceSection 
-        title="Scarlett Brunch"
-        description={[
-          "Ease into the weekend with a leisurely brunch designed for slow afternoons and good company.",
-          "With live music, interactive food stations, and our signature electrolyte gola bar, it’s a celebration of good food, great company, and unhurried afternoons.",
-          "Available at both our Bandra and Juhu locations."
-        ]}
-        imageSrc={getCloudinaryUrl(EXP_BRUNCH)}
-        imageAlt="Scarlett Brunch"
-        reverse={true}
       />
 
         </div>

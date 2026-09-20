@@ -63,11 +63,18 @@ export default function Navbar() {
   const isHomePage = pathname === '/';
   const hideHeader = isHomePage && heroVisible && !isOverlayOpen;
   const showBackLink = !isHomePage;
-  const backHref = pathname === '/experiences/set-menu' ? '/experiences' : '/';
+  const backHref = pathname === '/experiences/set-menu' || pathname === '/experiences/brunch' ? '/experiences' : '/';
   // These pages have a section background (#851F27) nearly identical to the header's default red — use near-black there for contrast
   const REDBG_PAGES = ['/drink', '/parties', '/parties/spaces'];
   const needsDarkHeaderText = REDBG_PAGES.includes(pathname);
+  // Food/brunch/set menu pages all have a dark green section background
+  const GREENBG_MENU_PAGES = ['/eat', '/experiences/brunch', '/experiences/set-menu'];
+  const isGreenMenuPage = GREENBG_MENU_PAGES.includes(pathname);
+  const isMenuPage = isGreenMenuPage;
+  const headerBgColor = isGreenMenuPage ? 'bg-[#47682c]' : '';
   const headerTextColor = needsDarkHeaderText ? 'text-[#080F0F]' : 'text-[#841F27]';
+  // Menu pages show a page label below the logo — shrink the logo there to save vertical space
+  const logoSizeClass = isMenuPage ? 'text-[28px] md:text-[36px]' : 'text-[42px] md:text-[60px]';
 
   return (
     <>
@@ -75,8 +82,8 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ${
           isOverlayOpen || !isHomePage ? 'mix-blend-normal' : 'mix-blend-difference'
         } ${
-          scrolled ? 'py-4' : 'bg-transparent py-6'
-        } ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
+          scrolled ? 'py-4' : 'py-6'
+        } ${headerBgColor || 'bg-transparent'} ${hideHeader ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 translate-y-0'}`}
       >
         <div className="w-full px-6 md:px-12 flex items-center justify-between relative">
           {/* Back (non-home pages only) — right side */}
@@ -96,7 +103,7 @@ export default function Navbar() {
           {/* Center: Scarlett House Logo */}
           <div className="absolute left-1/2 -translate-x-1/2 z-0 w-full text-center pointer-events-none">
             <Link href="/" className="inline-block pointer-events-auto hover:opacity-80 transition-opacity">
-              <h1 className={`font-serif text-[42px] md:text-[60px] ${headerTextColor} tracking-tight leading-none whitespace-nowrap`}>
+              <h1 className={`font-serif ${logoSizeClass} ${headerTextColor} tracking-tight leading-none whitespace-nowrap`}>
                 Scarlett House
               </h1>
             </Link>

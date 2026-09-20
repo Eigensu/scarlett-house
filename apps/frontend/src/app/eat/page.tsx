@@ -195,7 +195,13 @@ export default function EatPage() {
 
   return (
     <main className="w-full bg-[#47682c] relative z-10 text-[#FDF0D5] min-h-screen">
-      <div className="w-full h-[70px]" />
+      <div className="w-full h-[80px] md:h-[90px]" />
+
+      <div className="w-full text-center pb-4">
+        <span className="font-serif text-[22px] md:text-[28px] uppercase tracking-[0.2em] opacity-80">
+          Food Menu
+        </span>
+      </div>
 
       {sections.map((section, i) => (
         <MenuModule

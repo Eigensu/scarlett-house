@@ -19,7 +19,7 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
   return (
     <section className={clsx("w-full px-5 py-[30px] relative", className)}>
       {headerAction && (
-        <div className="absolute right-5 top-[30px]">
+        <div className="absolute right-5 top-[30px] flex items-end h-[40px] md:h-[60px]">
           {headerAction}
         </div>
       )}
@@ -29,7 +29,10 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
           align === 'left' ? "mr-auto" : "ml-auto"
         )}
       >
-        <h2 className="text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-current mb-[30px]">
+        <h2 className={clsx(
+          "text-[40px] md:text-[60px] leading-[40px] md:leading-[60px] uppercase font-serif tracking-normal text-current mb-[30px]",
+          headerAction && "pr-[110px] md:pr-0"
+        )}>
           {title}
           {subtitle && subtitle.split('\n').map((line, i) => (
             <span key={i} className="block text-[16px] md:text-[20px] leading-[20px] md:leading-[24px] italic normal-case tracking-normal mt-1">
@@ -72,11 +75,22 @@ export default function MenuModule({ title, subtitle, note, footnote, align, lay
                   <div className="break-words">{name}</div>
                   <div className="text-right shrink-0 ml-4 whitespace-nowrap">{price}</div>
                 </div>
-                {description && (
-                  <div className="text-[14px] leading-[20px] opacity-70 mt-1">
-                    {description}
-                  </div>
-                )}
+                {description && (() => {
+                  const leadingMatch = description.match(/^(\([^)]*\))\s*(.*)$/);
+                  const trailingMatch = !leadingMatch && description.match(/^(.*?)\s*(\([^)]*\))$/);
+                  const lines = leadingMatch
+                    ? [leadingMatch[1], leadingMatch[2]]
+                    : trailingMatch
+                    ? [trailingMatch[1], trailingMatch[2]]
+                    : [description];
+                  return (
+                    <div className="text-[14px] leading-[20px] opacity-70 mt-1">
+                      {lines.map((line, i) => (
+                        <div key={i}>{line}</div>
+                      ))}
+                    </div>
+                  );
+                })()}
               </div>
             );
           }) : items.map((row, rowIndex) => (
