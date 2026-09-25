@@ -35,7 +35,6 @@ export const NEW_AMBIENCE_CAROUSEL = "scarlett-house/ambience/ybchbhmdktfgylifh8
 export const NEW_EXPERIENCES_SET_MENU = "scarlett-house/experiences/o4tuxevzrupjk7bgujkx";
 export const EXP_WINE_CHEESE = "scarlett-house/experiences/prmjverc5bsffiqnaajt";
 export const EXP_BUGGIE = "scarlett-house/experiences/cbg758vyiqct6tnyszg6";
-export const EXP_DELIVERIES = "scarlett-house/experiences/oldetf9yrpgck5mqnbm6";
 export const EXP_ATTIC = "scarlett-house/ambience/nipbu1ajseszrzzzqpaw";
 export const EXP_BRUNCH = "scarlett-house/experiences/sf8d5e7jyomwjzuuhi1w";
 

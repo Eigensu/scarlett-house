@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/scarlett/Footer';
 import Navbar from '@/components/scarlett/Navbar';
-import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU, EXP_WINE_CHEESE, EXP_BUGGIE, EXP_DELIVERIES, EXP_ATTIC, EXP_BRUNCH, AMBIENCE } from '@/lib/cloudinary';
+import { ImageMap, getCloudinaryUrl, NEW_EXPERIENCES_SET_MENU, EXP_WINE_CHEESE, EXP_BUGGIE, EXP_ATTIC, EXP_BRUNCH, AMBIENCE } from '@/lib/cloudinary';
 
 interface ExperienceSectionProps {
   title: string;
@@ -168,19 +168,7 @@ export default function ExperiencesPage() {
         imageAlt="Scarlett House Buggie"
       />
 
-      {/* Experience 4: Home Deliveries */}
-      <ExperienceSection 
-        title="Home Deliveries – Juhu"
-        description={[
-          "Enjoy the warmth and flavours of Scarlett House from the comfort of your home.",
-          "Our Juhu delivery menu brings your favourite dishes straight from our house to yours."
-        ]}
-        imageSrc={getCloudinaryUrl(EXP_DELIVERIES)}
-        imageAlt="Home Deliveries"
-        reverse={true}
-      />
-
-      {/* Experience 5: The Red Room */}
+      {/* Experience 4: The Red Room */}
       <ExperienceSection 
         title="The Red Room"
         description={[
@@ -189,9 +177,10 @@ export default function ExperiencesPage() {
         ]}
         imageSrc={getCloudinaryUrl(ImageMap.hero[0])}
         imageAlt="The Red Room"
+        reverse={true}
       />
 
-      {/* Experience 6: The Glass House */}
+      {/* Experience 5: The Glass House */}
       <ExperienceSection 
         title="The Glass House – Juhu"
         description={[
@@ -200,10 +189,9 @@ export default function ExperiencesPage() {
         ]}
         imageSrc={getCloudinaryUrl(AMBIENCE[5])}
         imageAlt="The Glass House Juhu"
-        reverse={true}
       />
 
-      {/* Experience 7: The Attic */}
+      {/* Experience 6: The Attic */}
       <ExperienceSection 
         title="The Attic – Bandra"
         description={[
@@ -212,6 +200,7 @@ export default function ExperiencesPage() {
         ]}
         imageSrc={getCloudinaryUrl(EXP_ATTIC)}
         imageAlt="The Attic Bandra"
+        reverse={true}
       />
 
         </div>
