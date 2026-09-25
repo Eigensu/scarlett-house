@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Instrument_Serif, DM_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import ScrollObserver from '@/components/ScrollObserver';
 import Navbar from '@/components/scarlett/Navbar';
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
